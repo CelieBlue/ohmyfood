@@ -3,7 +3,7 @@ Projet 3 - OpenClassrooms - Animations pour un site de restauration gastronomiqu
 
 ## Présentation du projet
 
-Il est proposé aux étudiants du projet 3 de développer un site 100% mobile qui répertorie les menus de restaurants gastronomique et qui permet de réserver ses menus en ligne.
+Il est proposé aux étudiants du projet 3 de développer un site 100% mobile qui répertorie les menus de restaurants gastronomiques et qui permet de réserver ses menus en ligne.
 
 Il est également possible de composer ses menus.
 
