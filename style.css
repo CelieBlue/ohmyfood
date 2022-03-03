@@ -1,0 +1,29 @@
+/* VARIABLES */
+:root {
+  --primary: #9356dc;
+  --secondary: #ff79da;
+  --tertiary: #99e2d0;
+  --darkgrey: #d3d3d3;
+  --mediumgrey: #ededed;
+  --lightgrey: #f7f7f7;
+  --text-color: #000;
+}
+
+/** RESET **/
+*, ::before, ::after {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vh;
+  color: #000;
+}
+
+/* LOGO */
+#logo {
+  background-image: url(/images/ohmyfood.png);
+  background-repeat: no-repeat;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */
