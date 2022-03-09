@@ -23,6 +23,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 body {
@@ -34,7 +35,7 @@ body {
 }
 
 h1 {
-    font-size: 26px;
+    font-size: 28px;
 }
 
 h2 {
@@ -70,16 +71,18 @@ h5 {
     background-color: var(--white);
     position:relative;
     box-shadow: rgba(119, 119, 119, 0.45) 0px 3px 5px 0px;
-    z-index: 100;
+    z-index: 10;
 }
 
 #logo {
-    height:38px;
-    width: 160px;
-    background-image: url(/images/ohmyfood.png);
-    background-repeat: no-repeat;
-    background-size: contain;
+    font-family: "Shrikhand";
+    color: var(--text-color);
+    font-size: 40px;
     cursor: pointer;
+
+    a {
+        color: var(--text-color);
+    }
 }
 
 /* Search */ 
@@ -96,9 +99,11 @@ h5 {
     padding-right:15px;
 }
 
+/* RESERVATION */
+
 #resa {
     @include flexCenter(column);
-    padding: 40px 20px 40px 20px ;
+    padding: 50px 20px 70px 20px ;
 
     h1, h2 {
         text-align: center;
@@ -108,7 +113,8 @@ h5 {
 
 
 .input_button {
-    @include buttonForm(var(--primary), var(--primary), var(--primary), var(--secondary), 50px, var(--white), 1.10);
+    @include buttonForm(var(--primary), var(--primary), var(--primary), var(--secondary), 50px, var(--white), 1.02);
+    margin-top : 20px;
 }
 
 
@@ -122,8 +128,8 @@ aside {
 }
 
 .item {
-    height:100px;
-    margin:10px 20px 30px 10px;
+    height:90px;
+    margin:15px 20px 30px 15px;
     background-color: var(--lightgrey);
     display:flex;
     align-items:center;
@@ -144,7 +150,7 @@ aside .number {
 }
 
 aside .item_icon {
-    font-size:24px;
+    font-size:22px;
     color: var(--anthracite);
     padding: 0px 25px;
 }
