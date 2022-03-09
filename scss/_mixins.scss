@@ -9,14 +9,26 @@
     flex-direction: $direction;
 }
 
-@mixin buttonForm($background, $linear-gradient1, $linear-gradient2, $linear-gradient3, $color) {
+@mixin buttonForm($background, $linear-gradient1, $linear-gradient2, $linear-gradient3, $border-radius, $color, $brightness) {
     padding: 15px 20px;
     background: $background;
     background: linear-gradient(355deg, $linear-gradient1 0%, $linear-gradient2 20%, $linear-gradient3 100%);
     border:none;
-    border-radius: 50px;
+    border-radius: $border-radius;
     color: $color;
     font-size : 18px;
     letter-spacing: 1px;
     font-weight: 500;
+    box-shadow: rgba(112, 111, 111, 0.45) 0px 4px 6px 0px;
+
+    &:hover {
+        filter: brightness($brightness);
+        box-shadow: rgba(59, 59, 59, 0.45) 0px 6px 8px 0px;
+        transition: 0.6s ease-out;
+    }
 }
+
+// @mixin numberedBox {
+//     background-color: $background-color;
+
+// }
