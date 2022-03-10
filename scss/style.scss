@@ -14,6 +14,8 @@
     --mediumgrey: #{$mediumgrey};
     --lightgrey: #{$lightgrey};
     --text-color: #{$text-color};
+    --text-button: #{$text-button};
+    --text-color-new: #{$text-color-new};
     --white: #{$white};
 }
 
@@ -55,6 +57,7 @@ h4 {
 
 h5 {
     font-size: 20px;
+    line-height: 32px;
 }
 
 
@@ -77,7 +80,7 @@ h5 {
 #logo {
     font-family: "Shrikhand";
     color: var(--text-color);
-    font-size: 40px;
+    font-size: 32px;
     cursor: pointer;
 
     a {
@@ -113,7 +116,7 @@ h5 {
 
 
 .input_button {
-    @include buttonForm(var(--primary), var(--primary), var(--primary), var(--secondary), 50px, var(--white), 1.02);
+    @include buttonForm(var(--primary), var(--primary), var(--primary), var(--secondary), 50px, var(--text-button), 1.02);
     margin-top : 20px;
 }
 
@@ -122,7 +125,7 @@ h5 {
 
 aside {
     background-color: var(--white);
-    padding: 0px 20px 20px 50px;
+    padding: 0px 10px 40px 20px;
 }
 
 .item {
@@ -151,13 +154,17 @@ aside .item_icon {
     font-size:22px;
     color: var(--anthracite);
     padding: 0px 25px;
+
+    a {
+        color: var(--primary);
+    }
 }
 
 
 /********** MAIN *********/
 
 main {
-    padding:20px;
+    padding:10px 20px 20px 20px;
 }
 
 /*** FONCTIONNEMENT ***/
@@ -165,43 +172,75 @@ main {
 .card {
     position: relative;
     background-color: var(--white);
-    height: 320px;
-    margin:10px 0px 30px 0px;
+    height: 305px;
+    margin-bottom:30px;
     border-radius: 15px;
-    box-shadow: 0px 6px 10px 0px var(--mediumgrey);
+    box-shadow: 0px 6px 12px 0px var(--mediumgrey);
 
     p {
         font-size : 20px;
-        margin-top:20px;
+    }
+
+    a {
+        color: var(--text-color);
     }
 }
 
 .card img {
     width:100%;
-    height: 200px;
+    height: 220px;
     object-fit: cover;
     object-position: center;
     border-radius: 20px 20px 0px 0px;
 }
 
 .infos {
-    padding: 10px 20px;
+    padding: 10px 20px 20px 20px;
     display:flex;
     flex-direction:row;
     justify-content: space-between;
+    align-items: flex-start;
 }
 
 .heart {
-    font-size:26px;
-    margin: 20px 10px 0 0;
+    font-size:30px;
+    margin: 4px 10px 0px 0px;
 }
 
+.card_new {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width:100px;
+    height:40px;
+    background-color: var(--tertiary);
+    color: var(--text-color-new);
+    font-weight: 900;
+    @include flexCenter(row);
+}
 
 
 /********** FOOTER *********/
 
-
 footer {
+    padding:25px;
     background-color: var(--anthracite);
     color: var(--white);
+
+    p {
+       font-size: 20px;
+       line-height: 30px; 
+    }
+
+    
+    a {
+        color: var(--white);
+    }
+}
+
+.logo2 {
+    font-family: "Shrikhand";
+    font-size: 20px;
+    padding-bottom: 15px;
+
 }
