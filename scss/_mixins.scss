@@ -28,6 +28,24 @@
     }
 }
 
+@mixin box_model($width, $height, $background-color, $border, $border-radius, $box-shadow) {
+    width: $width;
+    height:$height;
+    background-color: $background-color;
+    border:$border;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+}
+
+@mixin img_size($width, $height, $object-fit, $object-position, $border-radius) {
+    width: $width;
+    height: $height;
+    object-fit: $object-fit;
+    object-position: $object-position;
+    border-radius: $border-radius;
+}
+
+
 // @mixin numberedBox {
 //     background-color: $background-color;
 

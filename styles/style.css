@@ -133,14 +133,18 @@ aside {
 }
 
 .item {
+  width: none;
   height: 90px;
-  margin: 15px 20px 30px 15px;
   background-color: var(--lightgrey);
-  display: flex;
-  align-items: center;
   border: none;
   border-radius: 30px;
   box-shadow: rgba(201, 201, 201, 0.45) 0px 4px 10px 5px;
+  margin: 15px 20px 30px 15px;
+  display: flex;
+  align-items: center;
+}
+.item p {
+  font-size: 18px;
 }
 
 aside .number {
@@ -221,6 +225,15 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: row;
+}
+
+/** ========== PAGE RESTAURANT ========== **/
+#restaurant img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0px 0px 0px 0px;
 }
 
 /********** FOOTER *********/
