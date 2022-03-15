@@ -1,0 +1,8 @@
+/** ========== PAGE RESTAURANT ========== **/
+
+#restaurant {
+
+    img {
+        @include img_size(100%, 350px, cover, center, 0px 0px 0px 0px);
+    }
+}

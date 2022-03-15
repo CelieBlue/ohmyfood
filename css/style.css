@@ -1,5 +1,14 @@
+/** ========== PAGE RESTAURANT ========== **/
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&family=Shrikhand&display=swap");
+#restaurant img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0px 0px 0px 0px;
+}
+
 :root {
   --primary: #9356dc;
   --secondary: #ff79da;
@@ -42,15 +51,6 @@ h3 {
   font-size: 28px;
   padding-top: 50px;
   padding-bottom: 20px;
-}
-
-h4 {
-  font-size: 18px;
-}
-
-h5 {
-  font-size: 20px;
-  line-height: 32px;
 }
 
 /************* HEADER *************/
@@ -105,6 +105,13 @@ h5 {
 #resa h1, #resa h2 {
   text-align: center;
   padding-bottom: 20px;
+}
+#resa h1 {
+  font-size: 28px;
+}
+#resa h2 {
+  font-weight: 400;
+  font-size: 20px;
 }
 
 .input_button {
@@ -184,6 +191,10 @@ main {
   border-radius: 15px;
   box-shadow: 0px 6px 12px 0px var(--mediumgrey);
 }
+.card h4 {
+  font-size: 20px;
+  line-height: 32px;
+}
 .card p {
   font-size: 20px;
 }
@@ -225,15 +236,6 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-}
-
-/** ========== PAGE RESTAURANT ========== **/
-#restaurant img {
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 0px 0px 0px 0px;
 }
 
 /********** FOOTER *********/
