@@ -69,10 +69,13 @@ header {
     }
 }
 
+
+
 .dish {
-    padding: 10px;
+    display:flex;
     margin-bottom:20px;
     @include boxModel(100%, 80px, var(--white), none, 15px, rgba(201, 201, 201, 0.45) 4px 4px 12px 2px);
+    @include spaceBetween;
 
     h3 {
         font-size: 20px;
@@ -84,6 +87,11 @@ header {
     }
 }
 
+.dish_container {
+    width:100%;
+    padding:10px;
+}
+
 .dish_infos {
     @include spaceBetween;
 }
@@ -91,5 +99,31 @@ header {
 .price {
     font-weight: bold;
     width:50px;
+}
+
+form .menu_button {
+    visibility:visible;
+    margin-left:0px;
+    width:70px;
+    height:80px;
+    border:2px solid var(--tertiary);
+    border-radius: 0px 15px 15px 0px;
+    background-color: var(--tertiary);
+    font-size: 16px;
+    color:#FFF;
+}
+
+form .menu_button:hover {
+    background-color: var(--tertiary);
+    cursor:pointer;
+}
+
+form .menu_reservation {
+    width:25px;
+    height:25px;
+    border:1px solid var(--white);
+    appearance:none;
+    border-radius:50px;
+    background-color: var(--white);
 }
 
