@@ -1,12 +1,116 @@
 /** ========== PAGE RESTAURANT ========== **/
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&family=Shrikhand&display=swap");
-#restaurant img {
+header {
+  position: relative;
+}
+header img {
   width: 100%;
-  height: 350px;
+  height: 270px;
   object-fit: cover;
   object-position: center;
   border-radius: 0px 0px 0px 0px;
+}
+
+#restaurant {
+  position: relative;
+  margin-top: -30px;
+  padding: 30px 20px 0px 20px;
+  background-color: var(--lightgrey);
+  border-radius: 30px 30px 0px 0px;
+  z-index: 10;
+}
+#restaurant h1 {
+  font-family: "Shrikhand";
+  font-size: 34px;
+  font-weight: lighter;
+}
+
+.restaurant_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.restaurant_button.input_button {
+  padding: 15px 20px;
+  background: var(--primary);
+  background: linear-gradient(355deg, var(--primary) 0%, var(--primary) 20%, var(--secondary) 100%);
+  border: none;
+  border-radius: 50px;
+  color: var(--text-button);
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  box-shadow: rgba(112, 111, 111, 0.45) 0px 4px 6px 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 80px;
+}
+.restaurant_button.input_button:hover {
+  filter: brightness(1.08);
+  box-shadow: rgba(59, 59, 59, 0.45) 0px 6px 8px 2px;
+  transition: 0.6s ease-out;
+  cursor: pointer;
+}
+
+#restaurant_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category {
+  padding-top: 30px;
+}
+.category h2 {
+  position: relative;
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding-bottom: 25px;
+  padding-left: 5px;
+}
+.category h2::after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 50px;
+  height: 3px;
+  top: 26px;
+  left: 5px;
+  background-color: var(--tertiary);
+}
+
+.dish {
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 80px;
+  background-color: var(--white);
+  border: none;
+  border-radius: 15px;
+  box-shadow: rgba(201, 201, 201, 0.45) 4px 4px 12px 2px;
+}
+.dish h3 {
+  font-size: 20px;
+  line-height: 32px;
+}
+.dish p {
+  font-size: 18px;
+}
+
+.dish_infos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-weight: bold;
+  width: 50px;
 }
 
 :root {
@@ -36,21 +140,6 @@ body {
   color: var(--text-color);
   background-color: var(--lightgrey);
   font-family: "Roboto", Arial, Helvetica, sans-serif;
-}
-
-h1 {
-  font-size: 28px;
-}
-
-h2 {
-  font-weight: 400;
-  font-size: 20px;
-}
-
-h3 {
-  font-size: 28px;
-  padding-top: 50px;
-  padding-bottom: 20px;
 }
 
 /************* HEADER *************/
@@ -100,7 +189,7 @@ h3 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 50px 20px 70px 20px;
+  padding: 50px 20px 30px 20px;
 }
 #resa h1, #resa h2 {
   text-align: center;
@@ -126,17 +215,24 @@ h3 {
   font-weight: 500;
   box-shadow: rgba(112, 111, 111, 0.45) 0px 4px 6px 0px;
   margin-top: 20px;
+  margin-bottom: 40px;
 }
 .input_button:hover {
-  filter: brightness(1.02);
-  box-shadow: rgba(59, 59, 59, 0.45) 0px 6px 8px 0px;
+  filter: brightness(1.08);
+  box-shadow: rgba(59, 59, 59, 0.45) 0px 6px 8px 2px;
   transition: 0.6s ease-out;
+  cursor: pointer;
 }
 
 /********** ASIDE - RESERVATION *********/
 aside {
   background-color: var(--white);
   padding: 0px 10px 40px 20px;
+}
+aside h3 {
+  font-size: 28px;
+  padding-top: 50px;
+  padding-bottom: 20px;
 }
 
 .item {
@@ -178,8 +274,13 @@ aside .item_icon a {
 }
 
 /********** MAIN *********/
-main {
+#home {
   padding: 10px 20px 20px 20px;
+}
+#home h3 {
+  font-size: 28px;
+  padding-top: 50px;
+  padding-bottom: 20px;
 }
 
 /*** FONCTIONNEMENT ***/

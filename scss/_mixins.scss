@@ -9,7 +9,7 @@
     flex-direction: $direction;
 }
 
-@mixin buttonForm($background, $linear-gradient1, $linear-gradient2, $linear-gradient3, $border-radius, $color, $brightness) {
+@mixin buttonForm($background, $linear-gradient1, $linear-gradient2, $linear-gradient3, $border-radius, $color, $margin-top, $margin-bottom, $brightness) {
     padding: 15px 20px;
     background: $background;
     background: linear-gradient(355deg, $linear-gradient1 0%, $linear-gradient2 20%, $linear-gradient3 100%);
@@ -20,15 +20,18 @@
     letter-spacing: 1px;
     font-weight: 500;
     box-shadow: rgba(112, 111, 111, 0.45) 0px 4px 6px 0px;
-
+    margin-top:$margin-top;
+    margin-bottom:$margin-bottom;
+   
     &:hover {
         filter: brightness($brightness);
-        box-shadow: rgba(59, 59, 59, 0.45) 0px 6px 8px 0px;
+        box-shadow: rgba(59, 59, 59, 0.45) 0px 6px 8px 2px;
         transition: 0.6s ease-out;
+        cursor:pointer;
     }
 }
 
-@mixin box_model($width, $height, $background-color, $border, $border-radius, $box-shadow) {
+@mixin boxModel ($width, $height, $background-color, $border, $border-radius, $box-shadow){
     width: $width;
     height:$height;
     background-color: $background-color;
@@ -37,7 +40,7 @@
     box-shadow: $box-shadow;
 }
 
-@mixin img_size($width, $height, $object-fit, $object-position, $border-radius) {
+@mixin imgSize($width, $height, $object-fit, $object-position, $border-radius) {
     width: $width;
     height: $height;
     object-fit: $object-fit;

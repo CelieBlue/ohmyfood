@@ -2,7 +2,7 @@
 @import './placeholders';
 @import './mixins';
 @import './functions';
-@import './restaurant' ;
+@import './restaurant';
 
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&family=Shrikhand&display=swap');
@@ -36,26 +36,6 @@ body {
     background-color: var(--lightgrey);
     font-family: "Roboto", Arial, Helvetica, sans-serif ;
 }
-
-h1 {
-    font-size: 28px;
-}
-
-h2 {
-    font-weight: 400;
-    font-size: 20px;
-}
-
-h3 {
-    font-size:28px;
-    padding-top:50px;
-    padding-bottom:20px;
-}
-
-// h4 {
-//     font-size:18px;
-// }
-
 
 
 /************* HEADER *************/
@@ -102,7 +82,7 @@ h3 {
 
 #resa {
     @include flexCenter(column);
-    padding: 50px 20px 70px 20px ;
+    padding: 50px 20px 30px 20px ;
 
     h1, h2 {
         text-align: center;
@@ -117,12 +97,11 @@ h3 {
         font-weight: 400;
         font-size: 20px;
     }
-}
+  }
 
 
 .input_button {
-    @include buttonForm(var(--primary), var(--primary), var(--primary), var(--secondary), 50px, var(--text-button), 1.02);
-    margin-top : 20px;
+    @include buttonForm(var(--primary), var(--primary), var(--primary), var(--secondary), 50px, var(--text-button), 20px, 40px, 1.08);
 }
 
 
@@ -131,10 +110,16 @@ h3 {
 aside {
     background-color: var(--white);
     padding: 0px 10px 40px 20px;
+
+    h3 {
+        font-size:28px;
+        padding-top:50px;
+        padding-bottom:20px;
+    }    
 }
 
 .item {
-    @include box_model (none, 90px, var(--lightgrey), none, 30px, rgba(201, 201, 201, 0.45) 0px 4px 10px 5px);
+    @include boxModel (none, 90px, var(--lightgrey), none, 30px, rgba(201, 201, 201, 0.45) 0px 4px 10px 5px);
     margin:15px 20px 30px 15px;
     display:flex;
     align-items:center;
@@ -168,8 +153,15 @@ aside .item_icon {
 
 /********** MAIN *********/
 
-main {
+#home {
     padding:10px 20px 20px 20px;
+
+    h3 {
+        font-size:28px;
+        padding-top:50px;
+        padding-bottom:20px;
+    }
+
 }
 
 /*** FONCTIONNEMENT ***/
@@ -196,7 +188,7 @@ main {
 }
 
 .card img {
-    @include img_size(100%, 220px, cover, center, 20px 20px 00px 0px);
+    @include imgSize(100%, 220px, cover, center, 20px 20px 00px 0px);
 }
 
 .infos {
