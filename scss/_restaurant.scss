@@ -1,5 +1,6 @@
 /** ========== PAGE RESTAURANT ========== **/
 
+/*** Arrow to return to index.html ***/
 .return_home {
     justify-self: flex-start;
     width:30px;
@@ -9,6 +10,7 @@
     cursor: pointer;
 }
 
+/***** HEADER - LOGO *****/
 header {
     position:relative;
 
@@ -16,6 +18,9 @@ header {
         @include imgSize(100%, 270px, cover, center, 0px 0px 0px 0px);
     }
 }
+
+
+/********* MAIN *********/
 
 #restaurant {
     position:relative;
@@ -31,20 +36,6 @@ header {
         line-height:38px;
         font-weight:lighter;
     }
-}
-
-.restaurant_button {
-
-    @include flexCenter(row);
-    margin-top:40px;
-    margin-bottom:40px;
-
-    
-    &.input_button {
-        @include buttonForm(var(--primary), var(--primary), var(--primary), var(--secondary), 50px, var(--text-button), 0px, 0px, 1.08);
-        padding-bottom:80px;
-        }
-
 }
 
 #restaurant_title {
@@ -77,10 +68,13 @@ header {
            
         }
     }
+
+    @include tablet-only {
+        padding:30px 80px 0px 80px;
+         }
 }
 
 .dish {
-    display:flex;
     margin-bottom:20px;
     @include boxModel(100%, 80px, var(--white), none, 15px, rgba(201, 201, 201, 0.45) 4px 4px 12px 2px);
     @include spaceBetween;
@@ -88,6 +82,11 @@ header {
     &:hover {
         cursor:pointer;
     }
+
+    
+    @include tablet-only {
+        margin: 20px 30px;
+         }
 }
 
 .dish_container {
@@ -108,7 +107,6 @@ header {
         white-space: nowrap;
         overflow: hidden;
     }
-
 }
 
 .dish_infos {
@@ -176,4 +174,18 @@ input[type="checkbox"].menu_checkbox:checked::before {
     left:50%;
     transform: translate(-50%, -50%);
     z-index: 2; 
+}
+
+.restaurant_button {
+
+    @include flexCenter(row);
+    margin-top:40px;
+    margin-bottom:40px;
+
+    
+    &.input_button {
+        @include buttonForm(var(--primary), var(--primary), var(--primary), var(--secondary), 50px, var(--text-button), 0px, 0px, 1.08);
+        padding-bottom:80px;
+        }
+
 }

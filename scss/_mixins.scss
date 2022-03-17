@@ -57,17 +57,34 @@
 
 // MIXIN FOR TABLETS ONLY - RESPONSIVE
 
-@mixin tablet-only {
-    @media screen and (min-width:map-get($breakpoints, tablet)) {
-        @content;
-    }
-}
+// @mixin tablet-only {
+//     @media screen and (min-width:map-get($breakpoints, tablet)) {
+//         @content;
+//     }
+// }
 
 // MIXIN FOR DESTOP ONLY - RESPONSIVE
 
-@mixin desktop-only {
-    @media screen and (min-width:map-get($breakpoints, desktop)) {
+// @mixin desktop-only {
+//     @media screen and (min-width:map-get($breakpoints, desktop)) {
+//         @content;
+//     }
+// }
+
+@mixin tablet-only {
+    @media screen and (min-width:#{$tablet}) {
         @content;
     }
 }
+
+//MIXIN FOR DESTOP ONLY - RESPONSIVE
+
+@mixin desktop-only {
+    @media screen and (min-width:#{$desktop}) {
+        @content;
+    }
+}
+
+
+
 

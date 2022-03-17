@@ -110,17 +110,24 @@ body {
 }
 
 
-/********** ASIDE - RESERVATION *********/
+/********** ASIDE - FONCTIONING *********/
 
 aside {
+    display:flex;
+    flex-direction:column;
     background-color: var(--white);
     padding: 0px 10px 40px 20px;
 
     h3 {
+        display:inline-block;
         font-size:28px;
         padding-top:50px;
         padding-bottom:20px;
-    }    
+    }
+
+    @include tablet-only {
+        padding:0px 100px 40px 100px;
+         }
 }
 
 .item {
@@ -131,6 +138,13 @@ aside {
 
     p {
             font-size:18px;
+    }
+
+    @include tablet-only {
+
+        p {
+            font-size:22px;
+        }
     }
 }
 
@@ -143,6 +157,11 @@ aside .number {
     color: var(--white);
     font-weight: 700;
     @include flexCenter(row);
+
+    @include tablet-only {
+        height:40px;
+        width:40px;
+         }
 }
 
 aside .item_icon {
@@ -162,14 +181,27 @@ aside .item_icon {
     padding:10px 20px 20px 20px;
 
     h3 {
+        display:block;
         font-size:28px;
         padding-top:50px;
         padding-bottom:20px;
     }
-
 }
 
-/*** FONCTIONNEMENT ***/
+/*** RESTAURANT ***/
+
+.home_restaurant {
+    display:flex;
+    flex-direction:column;
+
+    @include tablet-only {
+        flex-direction:row;
+        flex-wrap:wrap;
+        gap:40px;
+        justify-content: center;
+        }
+    
+}
 
 .card {
     position: relative;
@@ -190,10 +222,14 @@ aside .item_icon {
     a {
         color: var(--text-color);
     }
+
+    @include tablet-only {
+    width:300px;         
+    }
 }
 
 .card img {
-    @include imgSize(100%, 220px, cover, center, 20px 20px 00px 0px);
+    @include imgSize(100%, 220px, cover, center, 20px 20px 0px 0px);
 }
 
 .infos {
