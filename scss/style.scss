@@ -55,17 +55,35 @@ body {
     position:relative;
     box-shadow: rgba(119, 119, 119, 0.45) 0px 3px 5px 0px;
     z-index: 10;
+
+    @include tablet-only {
+        height: 80px;
+          }
+
+    @include desktop-only {
+        height: 75px;
+        justify-content: flex-start;
+        padding-left:70px;
+    }
+
 }
 
 #logo {
     
     font-family: "Shrikhand";
     color: var(--text-color);
-    font-size: 32px;
+    font-size: 28px;
     cursor: pointer;
 
     a {
         color: var(--text-color);
+    }
+
+    @include tablet-only {
+        font-size: 36px;
+    }
+    @include desktop-only {
+        font-size: 40px;
     }
 }
 
@@ -76,6 +94,11 @@ body {
     height: 50px;
     background-color: var(--mediumgrey);
     font-weight:700;
+
+    @include desktop-only {
+        height:70px;
+        font-size: 24px;
+    }
 }
 
 .map_icon {
@@ -102,6 +125,20 @@ body {
         font-weight: 400;
         font-size: 20px;
     }
+
+    @include desktop-only {
+        padding: 20px 20px 0px 20px ;
+
+        h1 {
+            font-size: 36px;
+        }
+
+        h2 {
+            font-weight: 400;
+            font-size: 24px;
+            padding-bottom:10px;
+        }
+    }
   }
 
 
@@ -109,6 +146,18 @@ body {
     @include buttonForm(var(--primary), var(--primary), var(--primary), var(--secondary), 50px, var(--text-button), 20px, 40px, 1.08);
 }
 
+
+/** CONTAINER WITH THE ASIDE AND THE MAIN **/
+
+#column_container  {
+    display:flex;
+    flex-direction:column;
+
+    @include desktop-only {
+        flex-direction:row;
+        flex-wrap:nowrap;
+    }
+}
 
 /********** ASIDE - FONCTIONING *********/
 
@@ -128,6 +177,14 @@ aside {
     @include tablet-only {
         padding:0px 100px 40px 100px;
          }
+
+    @include desktop-only {
+        flex:40%;
+        order:2;
+        padding:0px 10px 40px 20px;
+        border-radius: 0px 40px 0px 0px;
+    }
+
 }
 
 .item {
@@ -141,10 +198,15 @@ aside {
     }
 
     @include tablet-only {
-
         p {
             font-size:22px;
         }
+
+        @include desktop-only {
+            height:120px;
+            padding-left: 10px;
+        }
+    
     }
 }
 
@@ -161,7 +223,13 @@ aside .number {
     @include tablet-only {
         height:40px;
         width:40px;
-         }
+    }
+    @include desktop-only {
+        height:50px;
+        width:50px;
+        margin-left:-20px;
+        font-size:22px;
+    }   
 }
 
 aside .item_icon {
@@ -186,6 +254,18 @@ aside .item_icon {
         padding-top:50px;
         padding-bottom:20px;
     }
+
+    @include desktop-only {
+        flex:60%;
+        order:1;
+        border-radius: 40px 0px 0px 0px;
+        background-color: var(--primary);
+        color: var(--white);
+
+        h3{
+            padding:40px 0px 30px 40px;
+        }
+    }
 }
 
 /*** RESTAURANT ***/
@@ -208,7 +288,7 @@ aside .item_icon {
     background-color: var(--white);
     height: 305px;
     margin-bottom:30px;
-    border-radius: 15px;
+    border-radius: 20px;
     box-shadow: 0px 6px 12px 0px var(--mediumgrey);
 
     h4 {
@@ -225,6 +305,11 @@ aside .item_icon {
 
     @include tablet-only {
     width:300px;         
+    }
+
+    @include desktop-only {
+        border: 2px solid var(--white);
+        box-shadow:none;
     }
 }
 
@@ -262,6 +347,8 @@ aside .item_icon {
 /********** FOOTER *********/
 
 footer {
+    display:flex;
+    flex-direction:column;
     padding:25px;
     background-color: var(--anthracite);
     color: var(--white);
@@ -274,11 +361,24 @@ footer {
     a {
         color: var(--white);
     }
+
+    @include desktop-only {
+        align-items: flex-end;
+        padding-right:70px;
+
+        p {
+            font-size: 18px;
+        }
+    }
 }
+
 
 .logo2 {
     font-family: "Shrikhand";
     font-size: 20px;
     padding-bottom: 15px;
 
+    @include desktop-only {
+        font-size: 26px;
+    }
 }

@@ -45,6 +45,20 @@ header img {
   align-items: center;
 }
 
+/***** DIV CONTAINER WITH THE THREE CATEGORIES OF DISHES *****/
+.categories {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 940px) {
+  .categories {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+
+/***** CATEGORY *****/
 .category {
   padding-top: 30px;
 }
@@ -55,6 +69,7 @@ header img {
   text-transform: uppercase;
   padding-bottom: 25px;
   padding-left: 5px;
+  /*** Green line under the title of the category ****/
 }
 .category h2::after {
   content: "";
@@ -69,6 +84,11 @@ header img {
 @media screen and (min-width: 700px) {
   .category {
     padding: 30px 80px 0px 80px;
+  }
+}
+@media screen and (min-width: 940px) {
+  .category {
+    padding: 30px 20px 0px 0px;
   }
 }
 
@@ -90,6 +110,13 @@ header img {
 @media screen and (min-width: 700px) {
   .dish {
     margin: 20px 30px;
+  }
+}
+@media screen and (min-width: 700px) {
+  .dish {
+    margin: 0px 30px 25px 0px;
+    min-width: 400px;
+    width: 100%;
   }
 }
 
@@ -259,15 +286,37 @@ body {
   box-shadow: rgba(119, 119, 119, 0.45) 0px 3px 5px 0px;
   z-index: 10;
 }
+@media screen and (min-width: 700px) {
+  #logo_container {
+    height: 80px;
+  }
+}
+@media screen and (min-width: 940px) {
+  #logo_container {
+    height: 75px;
+    justify-content: flex-start;
+    padding-left: 70px;
+  }
+}
 
 #logo {
   font-family: "Shrikhand";
   color: var(--text-color);
-  font-size: 32px;
+  font-size: 28px;
   cursor: pointer;
 }
 #logo a {
   color: var(--text-color);
+}
+@media screen and (min-width: 700px) {
+  #logo {
+    font-size: 36px;
+  }
+}
+@media screen and (min-width: 940px) {
+  #logo {
+    font-size: 40px;
+  }
 }
 
 /* Search */
@@ -279,6 +328,12 @@ body {
   height: 50px;
   background-color: var(--mediumgrey);
   font-weight: 700;
+}
+@media screen and (min-width: 940px) {
+  #search {
+    height: 70px;
+    font-size: 24px;
+  }
 }
 
 .map_icon {
@@ -305,6 +360,19 @@ body {
   font-weight: 400;
   font-size: 20px;
 }
+@media screen and (min-width: 940px) {
+  #resa {
+    padding: 20px 20px 0px 20px;
+  }
+  #resa h1 {
+    font-size: 36px;
+  }
+  #resa h2 {
+    font-weight: 400;
+    font-size: 24px;
+    padding-bottom: 10px;
+  }
+}
 
 .input_button {
   padding: 15px 20px;
@@ -327,6 +395,18 @@ body {
   cursor: pointer;
 }
 
+/** CONTAINER WITH THE ASIDE AND THE MAIN **/
+#column_container {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 940px) {
+  #column_container {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}
+
 /********** ASIDE - FONCTIONING *********/
 aside {
   display: flex;
@@ -343,6 +423,14 @@ aside h3 {
 @media screen and (min-width: 700px) {
   aside {
     padding: 0px 100px 40px 100px;
+  }
+}
+@media screen and (min-width: 940px) {
+  aside {
+    flex: 40%;
+    order: 2;
+    padding: 0px 10px 40px 20px;
+    border-radius: 0px 40px 0px 0px;
   }
 }
 
@@ -365,6 +453,12 @@ aside h3 {
     font-size: 22px;
   }
 }
+@media screen and (min-width: 700px) and (min-width: 940px) {
+  .item {
+    height: 120px;
+    padding-left: 10px;
+  }
+}
 
 aside .number {
   height: 30px;
@@ -383,6 +477,14 @@ aside .number {
   aside .number {
     height: 40px;
     width: 40px;
+  }
+}
+@media screen and (min-width: 940px) {
+  aside .number {
+    height: 50px;
+    width: 50px;
+    margin-left: -20px;
+    font-size: 22px;
   }
 }
 
@@ -405,6 +507,18 @@ aside .item_icon a {
   padding-top: 50px;
   padding-bottom: 20px;
 }
+@media screen and (min-width: 940px) {
+  #home {
+    flex: 60%;
+    order: 1;
+    border-radius: 40px 0px 0px 0px;
+    background-color: var(--primary);
+    color: var(--white);
+  }
+  #home h3 {
+    padding: 40px 0px 30px 40px;
+  }
+}
 
 /*** RESTAURANT ***/
 .home_restaurant {
@@ -425,7 +539,7 @@ aside .item_icon a {
   background-color: var(--white);
   height: 305px;
   margin-bottom: 30px;
-  border-radius: 15px;
+  border-radius: 20px;
   box-shadow: 0px 6px 12px 0px var(--mediumgrey);
 }
 .card h4 {
@@ -441,6 +555,12 @@ aside .item_icon a {
 @media screen and (min-width: 700px) {
   .card {
     width: 300px;
+  }
+}
+@media screen and (min-width: 940px) {
+  .card {
+    border: 2px solid var(--white);
+    box-shadow: none;
   }
 }
 
@@ -482,6 +602,8 @@ aside .item_icon a {
 
 /********** FOOTER *********/
 footer {
+  display: flex;
+  flex-direction: column;
   padding: 25px;
   background-color: var(--anthracite);
   color: var(--white);
@@ -493,11 +615,25 @@ footer p {
 footer a {
   color: var(--white);
 }
+@media screen and (min-width: 940px) {
+  footer {
+    align-items: flex-end;
+    padding-right: 70px;
+  }
+  footer p {
+    font-size: 18px;
+  }
+}
 
 .logo2 {
   font-family: "Shrikhand";
   font-size: 20px;
   padding-bottom: 15px;
+}
+@media screen and (min-width: 940px) {
+  .logo2 {
+    font-size: 26px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
