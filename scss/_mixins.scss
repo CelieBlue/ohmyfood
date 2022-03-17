@@ -9,6 +9,9 @@
     flex-direction: $direction;
 }
 
+
+// BUTTON FOR FORM WITH A GRADIENT AND A HOVER WITH SHADOW AND BRIGHTNESS
+
 @mixin buttonForm($background, $linear-gradient1, $linear-gradient2, $linear-gradient3, $border-radius, $color, $margin-top, $margin-bottom, $brightness) {
     padding: 15px 20px;
     background: $background;
@@ -31,6 +34,8 @@
     }
 }
 
+// BOX WITH ROUND CORNERS AND SHADOW
+
 @mixin boxModel ($width, $height, $background-color, $border, $border-radius, $box-shadow){
     width: $width;
     height:$height;
@@ -40,6 +45,8 @@
     box-shadow: $box-shadow;
 }
 
+// MIXIN TO RESIZE A IMAGE AND CHOOSE ITS BORDER
+
 @mixin imgSize($width, $height, $object-fit, $object-position, $border-radius) {
     width: $width;
     height: $height;
@@ -48,8 +55,19 @@
     border-radius: $border-radius;
 }
 
+// MIXIN FOR TABLETS ONLY - RESPONSIVE
 
-// @mixin numberedBox {
-//     background-color: $background-color;
+@mixin tablet-only {
+    @media screen and (min-width:map-get($breakpoints, tablet)) {
+        @content;
+    }
+}
 
-// }
+// MIXIN FOR DESTOP ONLY - RESPONSIVE
+
+@mixin desktop-only {
+    @media screen and (min-width:map-get($breakpoints, desktop)) {
+        @content;
+    }
+}
+

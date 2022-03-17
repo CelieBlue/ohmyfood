@@ -18,7 +18,11 @@
     --text-button: #{$text-button};
     --text-color-new: #{$text-color-new};
     --white: #{$white};
+    --tablet: #{$tablet};
+    --desktop: #{$desktop};
+    // --breakpoints: #{$breakpoints};
 }
+
 
 /** RESET **/
 
@@ -54,6 +58,7 @@ body {
 }
 
 #logo {
+    
     font-family: "Shrikhand";
     color: var(--text-color);
     font-size: 32px;

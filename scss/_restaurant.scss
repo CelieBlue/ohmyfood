@@ -1,5 +1,14 @@
 /** ========== PAGE RESTAURANT ========== **/
 
+.return_home {
+    justify-self: flex-start;
+    width:30px;
+    padding-left:15px;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 header {
     position:relative;
 
@@ -19,6 +28,7 @@ header {
     h1 {
         font-family: "Shrikhand";
         font-size: 34px;
+        line-height:38px;
         font-weight:lighter;
     }
 }
@@ -69,27 +79,36 @@ header {
     }
 }
 
-
-
 .dish {
     display:flex;
     margin-bottom:20px;
     @include boxModel(100%, 80px, var(--white), none, 15px, rgba(201, 201, 201, 0.45) 4px 4px 12px 2px);
     @include spaceBetween;
 
-    h3 {
-        font-size: 20px;
-        line-height: 32px;
-    }
-
-    p {
-        font-size : 18px;
+    &:hover {
+        cursor:pointer;
     }
 }
 
 .dish_container {
     width:100%;
+    min-width:200px;
     padding:10px;
+    h3 {
+        font-size: 20px;
+        line-height: 32px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    p {
+        font-size : 16px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
 }
 
 .dish_infos {
@@ -98,13 +117,15 @@ header {
 
 .price {
     font-weight: bold;
-    width:50px;
+    width:60px;
+    padding-left:10px;
 }
 
-form .menu_button {
-    visibility:visible;
-    margin-left:0px;
-    width:70px;
+.form_menu {
+    visibility:hidden;  // apparait en "visible"
+    @include flexCenter(row);
+    margin-left:-80px;   // passe à 0 quand il est visible
+    width:80px;
     height:80px;
     border:2px solid var(--tertiary);
     border-radius: 0px 15px 15px 0px;
@@ -113,17 +134,46 @@ form .menu_button {
     color:#FFF;
 }
 
-form .menu_button:hover {
+.form_menu:hover {
     background-color: var(--tertiary);
     cursor:pointer;
 }
 
-form .menu_reservation {
+input[type="checkbox"].menu_checkbox {
+    position: relative;
     width:25px;
     height:25px;
     border:1px solid var(--white);
     appearance:none;
     border-radius:50px;
     background-color: var(--white);
+    z-index:1;
 }
 
+input[type="checkbox"].menu_checkbox::before {
+    content:"\f00c";
+    font-family: "Font Awesome 5 Free";
+    font-weight:bold;
+    font-size:20px;
+    color:var(--tertiary);
+    display: inline-block;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; 
+}
+
+input[type="checkbox"].menu_checkbox:checked::before {
+    content:"\f00c";
+    font-family: "Font Awesome 5 Free";
+    font-weight:bold;
+    font-size:20px;
+    color:var(--primary);
+    display: inline-block;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; 
+}
