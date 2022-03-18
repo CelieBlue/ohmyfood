@@ -81,7 +81,7 @@ header img {
   left: 5px;
   background-color: var(--tertiary);
 }
-@media screen and (min-width: 700px) {
+@media screen and (max-width: 940px) and (min-width: 700px) {
   .category {
     padding: 30px 80px 0px 80px;
   }
@@ -107,12 +107,12 @@ header img {
 .dish:hover {
   cursor: pointer;
 }
-@media screen and (min-width: 700px) {
+@media screen and (max-width: 940px) and (min-width: 700px) {
   .dish {
     margin: 20px 30px;
   }
 }
-@media screen and (min-width: 700px) {
+@media screen and (max-width: 940px) and (min-width: 700px) {
   .dish {
     margin: 0px 30px 25px 0px;
     min-width: 400px;
@@ -152,12 +152,12 @@ header img {
 }
 
 .form_menu {
-  visibility: hidden;
+  visibility: visible;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  margin-left: -80px;
+  margin-left: 0px;
   width: 80px;
   height: 80px;
   border: 2px solid var(--tertiary);
@@ -286,14 +286,14 @@ body {
   box-shadow: rgba(119, 119, 119, 0.45) 0px 3px 5px 0px;
   z-index: 10;
 }
-@media screen and (min-width: 700px) {
+@media screen and (max-width: 940px) and (min-width: 700px) {
   #logo_container {
     height: 80px;
   }
 }
 @media screen and (min-width: 940px) {
   #logo_container {
-    height: 75px;
+    height: 60px;
     justify-content: flex-start;
     padding-left: 70px;
   }
@@ -308,14 +308,14 @@ body {
 #logo a {
   color: var(--text-color);
 }
-@media screen and (min-width: 700px) {
+@media screen and (max-width: 940px) and (min-width: 700px) {
   #logo {
     font-size: 36px;
   }
 }
 @media screen and (min-width: 940px) {
   #logo {
-    font-size: 40px;
+    font-size: 25px;
   }
 }
 
@@ -332,7 +332,7 @@ body {
 @media screen and (min-width: 940px) {
   #search {
     height: 70px;
-    font-size: 24px;
+    font-size: 20px;
   }
 }
 
@@ -351,7 +351,7 @@ body {
 }
 #resa h1, #resa h2 {
   text-align: center;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 #resa h1 {
   font-size: 28px;
@@ -362,14 +362,19 @@ body {
 }
 @media screen and (min-width: 940px) {
   #resa {
-    padding: 20px 20px 0px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px 20px 0px 10%;
   }
   #resa h1 {
-    font-size: 36px;
+    font-size: 38px;
+    text-align: left;
   }
   #resa h2 {
     font-weight: 400;
-    font-size: 24px;
+    font-size: 20px;
     padding-bottom: 10px;
   }
 }
@@ -420,9 +425,12 @@ aside h3 {
   padding-top: 50px;
   padding-bottom: 20px;
 }
-@media screen and (min-width: 700px) {
+@media screen and (max-width: 940px) and (min-width: 700px) {
   aside {
-    padding: 0px 100px 40px 100px;
+    padding: 0px 10px 40px 10px;
+  }
+  aside h3 {
+    padding-top: 30px;
   }
 }
 @media screen and (min-width: 940px) {
@@ -431,6 +439,17 @@ aside h3 {
     order: 2;
     padding: 0px 10px 40px 20px;
     border-radius: 0px 40px 0px 0px;
+  }
+}
+
+.fonctioning {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 940px) and (min-width: 700px) {
+  .fonctioning {
+    flex-direction: row;
+    justify-content: center;
   }
 }
 
@@ -448,12 +467,20 @@ aside h3 {
 .item p {
   font-size: 18px;
 }
-@media screen and (min-width: 700px) {
+@media screen and (max-width: 940px) and (min-width: 700px) {
+  .item {
+    width: 200px;
+    height: 250px;
+    flex-direction: column;
+  }
   .item p {
     font-size: 22px;
+    line-height: 28px;
+    text-align: center;
+    padding: 25px;
   }
 }
-@media screen and (min-width: 700px) and (min-width: 940px) {
+@media screen and (max-width: 940px) and (min-width: 700px) and (min-width: 940px) {
   .item {
     height: 120px;
     padding-left: 10px;
@@ -473,28 +500,36 @@ aside .number {
   align-items: center;
   flex-direction: row;
 }
-@media screen and (min-width: 700px) {
+@media screen and (max-width: 940px) and (min-width: 700px) {
   aside .number {
+    font-size: 16px;
+    margin-left: 0px;
+    margin-top: -20px;
     height: 40px;
     width: 40px;
   }
 }
 @media screen and (min-width: 940px) {
   aside .number {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     margin-left: -20px;
-    font-size: 22px;
+    font-size: 18px;
   }
 }
 
 aside .item_icon {
-  font-size: 22px;
+  font-size: 20px;
   color: var(--anthracite);
   padding: 0px 25px;
 }
 aside .item_icon a {
   color: var(--primary);
+}
+@media screen and (max-width: 940px) and (min-width: 700px) {
+  aside .item_icon {
+    padding: 20px;
+  }
 }
 
 /********** MAIN *********/
@@ -525,7 +560,15 @@ aside .item_icon a {
   display: flex;
   flex-direction: column;
 }
-@media screen and (min-width: 700px) {
+@media screen and (max-width: 940px) and (min-width: 700px) {
+  .home_restaurant {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 940px) {
   .home_restaurant {
     flex-direction: row;
     flex-wrap: wrap;
@@ -552,13 +595,14 @@ aside .item_icon a {
 .card a {
   color: var(--text-color);
 }
-@media screen and (min-width: 700px) {
+@media screen and (max-width: 940px) and (min-width: 700px) {
   .card {
     width: 300px;
   }
 }
 @media screen and (min-width: 940px) {
   .card {
+    width: 300px;
     border: 2px solid var(--white);
     box-shadow: none;
   }

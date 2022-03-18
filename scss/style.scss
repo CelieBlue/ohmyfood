@@ -61,7 +61,7 @@ body {
           }
 
     @include desktop-only {
-        height: 75px;
+        height: 60px;
         justify-content: flex-start;
         padding-left:70px;
     }
@@ -83,7 +83,7 @@ body {
         font-size: 36px;
     }
     @include desktop-only {
-        font-size: 40px;
+        font-size: 25px;
     }
 }
 
@@ -97,7 +97,7 @@ body {
 
     @include desktop-only {
         height:70px;
-        font-size: 24px;
+        font-size: 20px;
     }
 }
 
@@ -114,7 +114,7 @@ body {
 
     h1, h2 {
         text-align: center;
-        padding-bottom: 20px;
+        padding-bottom: 10px;
     }
 
     h1 {
@@ -127,15 +127,17 @@ body {
     }
 
     @include desktop-only {
-        padding: 20px 20px 0px 20px ;
+        @include flexStartCenter;
+        padding: 20px 20px 0px 10%;
 
         h1 {
-            font-size: 36px;
+            font-size: 38px;
+            text-align:left;
         }
 
         h2 {
             font-weight: 400;
-            font-size: 24px;
+            font-size: 20px;
             padding-bottom:10px;
         }
     }
@@ -175,7 +177,11 @@ aside {
     }
 
     @include tablet-only {
-        padding:0px 100px 40px 100px;
+        padding:0px 10px 40px 10px;
+
+        h3 {
+            padding-top:30px;
+        }
          }
 
     @include desktop-only {
@@ -184,7 +190,16 @@ aside {
         padding:0px 10px 40px 20px;
         border-radius: 0px 40px 0px 0px;
     }
+}
 
+.fonctioning {
+    display:flex;
+    flex-direction:column;
+
+    @include tablet-only {
+        flex-direction: row;
+        justify-content: center;
+    }
 }
 
 .item {
@@ -198,15 +213,21 @@ aside {
     }
 
     @include tablet-only {
+        width:200px;
+        height:250px;
+        flex-direction:column;
+        
         p {
             font-size:22px;
+            line-height: 28px;
+            text-align: center;
+            padding:25px;
         }
 
         @include desktop-only {
             height:120px;
             padding-left: 10px;
         }
-    
     }
 }
 
@@ -221,24 +242,31 @@ aside .number {
     @include flexCenter(row);
 
     @include tablet-only {
+        font-size:16px;
+        margin-left:0px;
+        margin-top:-20px;
         height:40px;
         width:40px;
     }
     @include desktop-only {
-        height:50px;
-        width:50px;
+        height:40px;
+        width:40px;
         margin-left:-20px;
-        font-size:22px;
+        font-size:18px;
     }   
 }
 
 aside .item_icon {
-    font-size:22px;
+    font-size:20px;
     color: var(--anthracite);
     padding: 0px 25px;
 
     a {
         color: var(--primary);
+    }
+
+    @include tablet-only {
+        padding:20px
     }
 }
 
@@ -280,6 +308,12 @@ aside .item_icon {
         gap:40px;
         justify-content: center;
         }
+    @include desktop-only {
+        flex-direction:row;
+        flex-wrap:wrap;
+        gap:40px;
+        justify-content: center;
+        }    
     
 }
 
@@ -304,10 +338,11 @@ aside .item_icon {
     }
 
     @include tablet-only {
-    width:300px;         
+        width:300px;         
     }
 
     @include desktop-only {
+        width:300px;
         border: 2px solid var(--white);
         box-shadow:none;
     }
