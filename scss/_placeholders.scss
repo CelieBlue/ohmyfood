@@ -4,7 +4,7 @@
     align-items: center;
 }
 
-@mixin flexStartCenter {
+@mixin flexStart {
     display:flex;
     flex-direction:column;
     justify-content:flex-start;

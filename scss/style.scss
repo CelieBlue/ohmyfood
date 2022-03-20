@@ -83,7 +83,7 @@ body {
         font-size: 36px;
     }
     @include desktop-only {
-        font-size: 25px;
+        font-size: 30px;
     }
 }
 
@@ -127,22 +127,31 @@ body {
     }
 
     @include desktop-only {
-        @include flexStartCenter;
-        padding: 20px 20px 0px 10%;
+        flex-direction:row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        height:240px;
+        padding: 20px 50px 0px 50px;
 
         h1 {
-            font-size: 38px;
+            font-size: clamp(28px, 3vw, 38px);
             text-align:left;
         }
 
         h2 {
             font-weight: 400;
-            font-size: 20px;
+            font-size: clamp(20px, 2vw, 22px);
             padding-bottom:10px;
         }
     }
   }
 
+.text_resa {
+    @include desktop-only {
+    @include flexStart;
+    margin-right:10%;
+    }
+  }
 
 .input_button {
     @include buttonForm(var(--primary), var(--primary), var(--primary), var(--secondary), 50px, var(--text-button), 20px, 40px, 1.08);
@@ -158,6 +167,7 @@ body {
     @include desktop-only {
         flex-direction:row;
         flex-wrap:nowrap;
+        padding: 0 50px;
     }
 }
 
@@ -177,7 +187,6 @@ aside {
     }
 
     @include tablet-only {
-        padding:0px 10px 40px 10px;
 
         h3 {
             padding-top:30px;
@@ -188,7 +197,11 @@ aside {
         flex:40%;
         order:2;
         padding:0px 10px 40px 20px;
-        border-radius: 0px 40px 0px 0px;
+        border-radius: 0px 30px 0px 0px;
+
+        h3 {
+            padding-top:30px;
+        }
     }
 }
 
@@ -223,13 +236,18 @@ aside {
             text-align: center;
             padding:25px;
         }
+    }
 
-        @include desktop-only {
-            height:120px;
-            padding-left: 10px;
+    @include desktop-only {
+        height:120px;
+        padding-left: 10px;
+        
+        p {
+            padding-right:10px;
         }
     }
 }
+
 
 aside .number {
     height: 30px;
@@ -286,12 +304,12 @@ aside .item_icon {
     @include desktop-only {
         flex:60%;
         order:1;
-        border-radius: 40px 0px 0px 0px;
+        border-radius: 30px 0px 0px 0px;
         background-color: var(--primary);
         color: var(--white);
 
         h3{
-            padding:40px 0px 30px 40px;
+            padding:20px 0px 30px 40px;
         }
     }
 }
@@ -397,9 +415,13 @@ footer {
         color: var(--white);
     }
 
+    @include tablet-only {
+        align-items:flex-end;
+    }
+
     @include desktop-only {
         align-items: flex-end;
-        padding-right:70px;
+        padding-right:50px;
 
         p {
             font-size: 18px;
