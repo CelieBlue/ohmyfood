@@ -142,6 +142,7 @@ header {
 }
 
 .form_menu {
+    position: relative;
     visibility:visible;  // apparait en "visible"
     @include flexCenter(row);
     margin-left:0px;   // passe à 0 quand il est visible
@@ -152,36 +153,39 @@ header {
     background-color: var(--tertiary);
     font-size: 16px;
     color:#FFF;
+    &:hover {
+        background-color: var(--tertiary);
+        cursor:pointer;
+    }
 }
 
-.form_menu:hover {
-    background-color: var(--tertiary);
-    cursor:pointer;
-}
 
 input[type="checkbox"].menu_checkbox {
     position: relative;
     width:25px;
     height:25px;
+    border:none;
     border:1px solid var(--white);
     appearance:none;
     border-radius:50px;
     background-color: var(--white);
-    z-index:1;
+    z-index:4;
 }
 
 input[type="checkbox"].menu_checkbox::before {
     content:"\f00c";
     font-family: "Font Awesome 5 Free";
+    position:absolute;
     font-weight:bold;
     font-size:20px;
     color:var(--tertiary);
     display: inline-block;
-    position:absolute;
     top:50%;
     left:50%;
     transform: translate(-50%, -50%);
-    z-index: 2; 
+    @extend %centerElement;
+    z-index: 5; 
+    @include rotTurn(checkMenu, 500ms, 0s);
 }
 
 input[type="checkbox"].menu_checkbox:checked::before {
@@ -191,11 +195,8 @@ input[type="checkbox"].menu_checkbox:checked::before {
     font-size:20px;
     color:var(--primary);
     display: inline-block;
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%, -50%);
-    z-index: 2; 
+    @extend %centerElement;
+    z-index:63;
 }
 
 .restaurant_button {
@@ -209,5 +210,10 @@ input[type="checkbox"].menu_checkbox:checked::before {
         @include buttonForm(var(--primary), var(--primary), var(--primary), var(--secondary), 50px, var(--text-button), 0px, 0px, 1.08);
         padding-bottom:80px;
         }
+}
 
+@keyframes checkMenu {
+    from {transform: rotate(0turn);
+    }
+    to {transform: rotate(1turn);}
 }
