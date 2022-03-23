@@ -47,6 +47,7 @@ header {
 .categories {
     display:flex;
     flex-direction: column;
+    align-content: center;
 
     @include desktop-only {
         flex-direction:row;
@@ -78,15 +79,14 @@ header {
             top:26px;
             left:5px;
             background-color: var(--tertiary);
-           
         }
     }
-
     @include tablet-only {
-        padding:30px 80px 0px 80px;
+        padding-left:8%;
+        padding-right:8%;
         }
     @include desktop-only {
-            padding:30px 20px 0px 0px;
+        padding-left:15px;
     }
 }
 
@@ -94,20 +94,12 @@ header {
     margin-bottom:20px;
     @include boxModel(100%, 80px, var(--white), none, 15px, rgba(201, 201, 201, 0.45) 4px 4px 12px 2px);
     @include spaceBetween;
+    cursor:pointer;
+    overflow:hidden;
 
-    &:hover {
-        cursor:pointer;
-    }
-    
-    @include tablet-only {
-        margin: 20px 30px;
-    }
-
-    @include tablet-only {
-
-        margin: 0px 30px 25px 0px;
-        min-width:400px;
-        width:100%;
+    &:hover + .form_menu{
+        background: red;
+        @include translLeft (checkAppearance, 1s);
     }
 }
 
@@ -115,6 +107,7 @@ header {
     width:100%;
     min-width:200px;
     padding:10px;
+
     h3 {
         font-size: 20px;
         line-height: 32px;
@@ -143,32 +136,26 @@ header {
 
 .form_menu {
     position: relative;
-    visibility:visible;  // apparait en "visible"
     @include flexCenter(row);
-    margin-left:0px;   // passe à 0 quand il est visible
     width:80px;
     height:80px;
+    left:0px;
     border:2px solid var(--tertiary);
     border-radius: 0px 15px 15px 0px;
     background-color: var(--tertiary);
-    font-size: 16px;
-    color:#FFF;
-    &:hover {
-        background-color: var(--tertiary);
-        cursor:pointer;
-    }
+    cursor:pointer;
 }
 
-
 input[type="checkbox"].menu_checkbox {
-    position: relative;
+    position: absolute;
     width:25px;
     height:25px;
-    border:none;
-    border:1px solid var(--white);
     appearance:none;
     border-radius:50px;
-    background-color: var(--white);
+    background: var(--white);
+    outline:none;
+    cursor:pointer;
+    @include rotTurn(checkMenu, 1s, 0s);
     z-index:4;
 }
 
@@ -176,27 +163,17 @@ input[type="checkbox"].menu_checkbox::before {
     content:"\f00c";
     font-family: "Font Awesome 5 Free";
     position:absolute;
+    border-radius:50px;
     font-weight:bold;
-    font-size:20px;
-    color:var(--tertiary);
+    font-size:22px;
+    color: var(--tertiary);
     display: inline-block;
-    top:50%;
-    left:50%;
-    transform: translate(-50%, -50%);
     @extend %centerElement;
     z-index: 5; 
-    @include rotTurn(checkMenu, 500ms, 0s);
 }
 
 input[type="checkbox"].menu_checkbox:checked::before {
-    content:"\f00c";
-    font-family: "Font Awesome 5 Free";
-    font-weight:bold;
-    font-size:20px;
-    color:var(--primary);
-    display: inline-block;
-    @extend %centerElement;
-    z-index:63;
+    color: var(--tertiary);
 }
 
 .restaurant_button {
@@ -204,7 +181,6 @@ input[type="checkbox"].menu_checkbox:checked::before {
     @include flexCenter(row);
     margin-top:40px;
     margin-bottom:40px;
-
     
     &.input_button {
         @include buttonForm(var(--primary), var(--primary), var(--primary), var(--secondary), 50px, var(--text-button), 0px, 0px, 1.08);
@@ -216,4 +192,13 @@ input[type="checkbox"].menu_checkbox:checked::before {
     from {transform: rotate(0turn);
     }
     to {transform: rotate(1turn);}
+}
+
+@keyframes checkAppearance {
+    0% {
+        left:80px;
+    }
+    100% {
+        left:0px;
+    }
 }
