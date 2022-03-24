@@ -98,8 +98,9 @@ header {
     overflow:hidden;
 
     &:hover + .form_menu{
-        background: red;
-        @include translLeft (checkAppearance, 1s);
+        // background: red;
+        // @include transLeft (checkAppearance, 1s);
+        transform:translate(0, 90px);
     }
 }
 
@@ -144,6 +145,7 @@ header {
     border-radius: 0px 15px 15px 0px;
     background-color: var(--tertiary);
     cursor:pointer;
+    transition:transform 330ms ease-in-out;
 }
 
 input[type="checkbox"].menu_checkbox {
@@ -194,11 +196,11 @@ input[type="checkbox"].menu_checkbox:checked::before {
     to {transform: rotate(1turn);}
 }
 
-@keyframes checkAppearance {
-    0% {
-        left:80px;
-    }
-    100% {
-        left:0px;
-    }
-}
+// @keyframes checkAppearance {
+//     0% {
+//         left:80px;
+//     }
+//     100% {
+//         left:0px;
+//     }
+// }

@@ -383,41 +383,40 @@ aside .item_icon {
     margin: 4px 10px 0px 0px;
 }
 
-.card .fa-heart {
-    position: relative;
+.card .icon_transparent {
+    position:relative;
     content: '\f004';
-    background: violet;
-    // overflow:hidden
     height:30px;
-    width:30px;
-    z-index: 0;
+    width: 30px;
+    z-index:1; 
 }
 
-.card .fa-heart::before {
+.card .icon_gradient {
     position:absolute;
     content: '\f004';
-    font-weight:bold;
-    top:35px;
-    width:100%;
-    height:100%;
-    transition: all .5s;
-    z-index:-1;
-    
-    &:hover {
-        top:0;
-}
-}
+    height:30px;
+    width: 31px;
+    opacity: 1;
+    z-index:2;
 
+    &::before {
+        position: absolute;
+        content: '\f004';
+        font-size: 32px;
+        font-style:normal;
+        font-weight:bold;
+        top:2px;
+        left:-30px;
+        background: linear-gradient(215deg, var(--primary), var(--secondary));
+        -webkit-text-fill-color:transparent;
+        -webkit-background-clip: text;
+        z-index: 3;
 
-.card .fa-heart::before {
-    color :red;
-    height:35px;
-    width:35px;
-    cursor:pointer;
-
-    &:hover {
-        top:0;
-    }
+        &:hover {
+            opacity:0;
+            transition: opacity 0.5s ease-out;
+        }
+   }
 }
 
 .card_new {
