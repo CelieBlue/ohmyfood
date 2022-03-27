@@ -98,8 +98,8 @@ header {
     overflow:hidden;
 
     &:hover + .form_menu{
-        // background: red;
-        // @include transLeft (checkAppearance, 1s);
+        background: red;
+        @include transLeft (checkAppearance, 1s);
         transform:translate(0, 90px);
     }
 }
@@ -190,17 +190,17 @@ input[type="checkbox"].menu_checkbox:checked::before {
         }
 }
 
+@keyframes checkAppearance {
+    0% {
+        left:80px;
+    }
+    100% {
+        left:0px;
+    }
+}
+
 @keyframes checkMenu {
     from {transform: rotate(0turn);
     }
     to {transform: rotate(1turn);}
 }
-
-// @keyframes checkAppearance {
-//     0% {
-//         left:80px;
-//     }
-//     100% {
-//         left:0px;
-//     }
-// }

@@ -115,6 +115,10 @@ header img {
   overflow: hidden;
 }
 .dish:hover + .form_menu {
+  background: red;
+  animation-name: checkAppearance;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
   transform: translate(0, 90px);
 }
 
@@ -227,6 +231,14 @@ input[type=checkbox].menu_checkbox:checked::before {
   cursor: pointer;
 }
 
+@keyframes checkAppearance {
+  0% {
+    left: 80px;
+  }
+  100% {
+    left: 0px;
+  }
+}
 @keyframes checkMenu {
   from {
     transform: rotate(0turn);
@@ -637,40 +649,59 @@ aside .item_icon a {
   margin: 4px 10px 0px 0px;
 }
 
+.card .heart_button {
+  background: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: #000;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  font-size: 30px;
+  margin: 4px 10px 0px 0px;
+}
+.card .heart_button:hover {
+  background-image: linear-gradient(215deg, var(--primary), var(--secondary));
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  animation: heart-animation 2s linear forwards;
+}
+
+@keyframes heart-animation {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
 .card .icon_transparent {
   position: relative;
-  content: "\f004";
-  height: 30px;
-  width: 30px;
   z-index: 1;
 }
 
 .card .icon_gradient {
   position: absolute;
-  content: "\f004";
-  height: 30px;
-  width: 31px;
-  opacity: 1;
-  z-index: 2;
-}
-.card .icon_gradient::before {
-  position: absolute;
-  content: "\f004";
-  font-size: 32px;
-  font-style: normal;
-  font-weight: bold;
-  top: 2px;
-  left: -30px;
   background: linear-gradient(215deg, var(--primary), var(--secondary));
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
-  z-index: 3;
-}
-.card .icon_gradient::before:hover {
+  top: 0;
+  left: 0;
   opacity: 0;
-  transition: opacity 0.5s ease-out;
+  z-index: 2;
+}
+.card .icon_gradient:hover {
+  animation: heart-animation 500ms linear forwards;
 }
 
+@keyframes heart-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .card_new {
   position: absolute;
   top: 20px;
@@ -708,11 +739,15 @@ footer a {
 }
 @media screen and (min-width: 1033px) {
   footer {
-    align-items: flex-end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
     padding-right: 50px;
   }
   footer p {
     font-size: 18px;
+    padding-left: 40px;
   }
 }
 

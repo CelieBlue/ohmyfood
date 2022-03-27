@@ -383,40 +383,73 @@ aside .item_icon {
     margin: 4px 10px 0px 0px;
 }
 
+// HEART ICON - BUTTON with opacity on hover
+
+.card .heart_button {
+    background:transparent;
+    -webkit-text-fill-color:transparent;
+    -webkit-text-stroke-width:3px;
+    -webkit-text-stroke-color: #000;
+       
+    border: none;
+    color : #000;
+    cursor: pointer;
+    font-size:30px;
+    margin: 4px 10px 0px 0px;
+    
+    &:hover {
+        background-image: linear-gradient(215deg, var(--primary), var(--secondary));
+       -webkit-text-fill-color:transparent;
+       -webkit-background-clip: text;
+       animation: heart-animation 2s linear forwards;
+    }
+}
+
+@keyframes heart-animation {
+    0% 
+    {    
+        opacity: 0%;    
+    }
+
+    100%{
+        opacity:100%;
+    }
+}
+
+
+//HEART ICON - 2 div one on the other :
+//One div with the heart with black border
+//One div with the solid heart with gradient
+
 .card .icon_transparent {
     position:relative;
-    content: '\f004';
-    height:30px;
-    width: 30px;
     z-index:1; 
 }
 
 .card .icon_gradient {
     position:absolute;
-    content: '\f004';
-    height:30px;
-    width: 31px;
-    opacity: 1;
+    background: linear-gradient(215deg, var(--primary), var(--secondary));
+    -webkit-text-fill-color:transparent;
+    -webkit-background-clip: text;
+    top:0;
+    left:0;
+    opacity: 0;
     z-index:2;
 
-    &::before {
-        position: absolute;
-        content: '\f004';
-        font-size: 32px;
-        font-style:normal;
-        font-weight:bold;
-        top:2px;
-        left:-30px;
-        background: linear-gradient(215deg, var(--primary), var(--secondary));
-        -webkit-text-fill-color:transparent;
-        -webkit-background-clip: text;
-        z-index: 3;
+    &:hover {
+        animation: heart-animation 500ms linear forwards;
+    }
+}
 
-        &:hover {
-            opacity:0;
-            transition: opacity 0.5s ease-out;
-        }
-   }
+@keyframes heart-animation {
+    0% 
+    {    
+    opacity: 0;    
+    }
+
+100%{
+    opacity:1;
+    }
 }
 
 .card_new {
@@ -456,11 +489,12 @@ footer {
     }
 
     @include desktop-only {
-        align-items: flex-end;
+        @include flexCenter(row);
         padding-right:50px;
 
         p {
             font-size: 18px;
+            padding-left: 40px;
         }
     }
 }
