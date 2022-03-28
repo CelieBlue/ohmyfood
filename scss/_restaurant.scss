@@ -90,6 +90,8 @@ header {
     }
 }
 
+// DISH BLOCK
+
 .dish {
     margin-bottom:20px;
     @include boxModel(100%, 80px, var(--white), none, 15px, rgba(201, 201, 201, 0.45) 4px 4px 12px 2px);
@@ -98,28 +100,32 @@ header {
     overflow:hidden;
     transition: all 1s;
     &:hover > .form_menu{
-        @include transLeft (checkAppearance, 1s, forwards);
+        @include transLeft (checkAppearance, 500ms, forwards);
+
+        & > .menu_checkbox {
+            @include rotTurn(checkMenu, 500ms, 0s);
+        }
     }
 }
 
 .dish_container {
     width:100%;
-    min-width:200px;
     padding:10px;
+    // margin-right:10px;
 
     h3 {
         font-size: 20px;
         line-height: 32px;
         text-overflow: ellipsis;
         white-space: nowrap;
-        // overflow: hidden;
+        overflow:hidden;
     }
 
     p {
         font-size : 16px;
         text-overflow: ellipsis;
         white-space: nowrap;
-        // overflow: hidden;
+        overflow:hidden;
     }
 }
 
@@ -129,16 +135,18 @@ header {
 
 .price {
     font-weight: bold;
-    width:60px;
+    min-width:30px;
     padding-left:10px;
 }
+
+// BLOCK BLUE - CHECK ROTATION
 
 .form_menu {
     position: relative;
     @include flexCenter(row);
-    width: 85px;
+    width:80px;
     height:80px;
-    left:75px;
+    left:80px;
     border-radius: 0px 15px 15px 0px;
     background-color: var(--tertiary);
     cursor:pointer;
@@ -153,7 +161,6 @@ input[type="checkbox"].menu_checkbox {
     border-radius:50px;
     background: var(--white);
     cursor:pointer;
-    @include rotTurn(checkMenu, 1s, 0s);
     z-index:4;
 }
 
@@ -165,7 +172,6 @@ input[type="checkbox"].menu_checkbox::before {
     font-weight:bold;
     font-size:22px;
     color: var(--tertiary);
-    display: inline-block;
     @extend %centerElement;
     z-index: 5; 
 }
@@ -173,6 +179,9 @@ input[type="checkbox"].menu_checkbox::before {
 input[type="checkbox"].menu_checkbox:checked::before {
     color: var(--tertiary);
 }
+
+
+// ORDER BUTTON
 
 .restaurant_button {
 
@@ -185,15 +194,18 @@ input[type="checkbox"].menu_checkbox:checked::before {
         padding-bottom:80px;
         }
 }
+
+// CHECKED BOX ROTATION ANIMATION
 @keyframes checkMenu {
     from {transform: rotate(0turn);
     }
     to {transform: rotate(1turn);}
 }
 
+// CHECKED BOX APPEARANCE LEFT TO 0
 @keyframes checkAppearance {
     0% {
-        left:85px;
+        left:80px;
     }
     100% {
         left:0px;

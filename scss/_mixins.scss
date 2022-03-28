@@ -96,7 +96,7 @@
     animation-delay: $delay;  
 } 
 
-// MIXIN FOR LEFT TO ZERO
+// MIXIN FOR LEFT 80px TO ZERO
 
 @mixin transLeft ($name, $duration, $fill-mode) {
     animation-name: $name;
