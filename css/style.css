@@ -113,13 +113,13 @@ header img {
   align-items: center;
   cursor: pointer;
   overflow: hidden;
+  transition: all 1s;
 }
-.dish:hover + .form_menu {
-  background: red;
+.dish:hover > .form_menu {
   animation-name: checkAppearance;
   animation-duration: 1s;
   animation-iteration-count: 1;
-  transform: translate(0, 90px);
+  animation-fill-mode: forwards;
 }
 
 .dish_container {
@@ -132,13 +132,11 @@ header img {
   line-height: 32px;
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: hidden;
 }
 .dish_container p {
   font-size: 16px;
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: hidden;
 }
 
 .dish_infos {
@@ -159,10 +157,9 @@ header img {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  width: 80px;
+  width: 85px;
   height: 80px;
-  left: 0px;
-  border: 2px solid var(--tertiary);
+  left: 75px;
   border-radius: 0px 15px 15px 0px;
   background-color: var(--tertiary);
   cursor: pointer;
@@ -176,7 +173,6 @@ input[type=checkbox].menu_checkbox {
   appearance: none;
   border-radius: 50px;
   background: var(--white);
-  outline: none;
   cursor: pointer;
   animation-name: checkMenu;
   animation-duration: 1s;
@@ -231,20 +227,20 @@ input[type=checkbox].menu_checkbox:checked::before {
   cursor: pointer;
 }
 
-@keyframes checkAppearance {
-  0% {
-    left: 80px;
-  }
-  100% {
-    left: 0px;
-  }
-}
 @keyframes checkMenu {
   from {
     transform: rotate(0turn);
   }
   to {
     transform: rotate(1turn);
+  }
+}
+@keyframes checkAppearance {
+  0% {
+    left: 85px;
+  }
+  100% {
+    left: 0px;
   }
 }
 :root {
@@ -649,32 +645,6 @@ aside .item_icon a {
   margin: 4px 10px 0px 0px;
 }
 
-.card .heart_button {
-  background: transparent;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 3px;
-  -webkit-text-stroke-color: #000;
-  border: none;
-  color: #000;
-  cursor: pointer;
-  font-size: 30px;
-  margin: 4px 10px 0px 0px;
-}
-.card .heart_button:hover {
-  background-image: linear-gradient(215deg, var(--primary), var(--secondary));
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  animation: heart-animation 2s linear forwards;
-}
-
-@keyframes heart-animation {
-  0% {
-    opacity: 0%;
-  }
-  100% {
-    opacity: 100%;
-  }
-}
 .card .icon_transparent {
   position: relative;
   z-index: 1;
@@ -684,11 +654,13 @@ aside .item_icon a {
   position: absolute;
   background: linear-gradient(215deg, var(--primary), var(--secondary));
   -webkit-text-fill-color: transparent;
+  background-clip: text;
   -webkit-background-clip: text;
   top: 0;
   left: 0;
   opacity: 0;
   z-index: 2;
+  cursor: pointer;
 }
 .card .icon_gradient:hover {
   animation: heart-animation 500ms linear forwards;

@@ -96,10 +96,13 @@
     animation-delay: $delay;  
 } 
 
-@mixin transLeft ($name, $duration) {
+// MIXIN FOR LEFT TO ZERO
+
+@mixin transLeft ($name, $duration, $fill-mode) {
     animation-name: $name;
     animation-duration:$duration;
     animation-iteration-count:1;
+    animation-fill-mode: $fill-mode;
 }
 
 

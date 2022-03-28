@@ -96,11 +96,9 @@ header {
     @include spaceBetween;
     cursor:pointer;
     overflow:hidden;
-
-    &:hover + .form_menu{
-        background: red;
-        @include transLeft (checkAppearance, 1s);
-        transform:translate(0, 90px);
+    transition: all 1s;
+    &:hover > .form_menu{
+        @include transLeft (checkAppearance, 1s, forwards);
     }
 }
 
@@ -114,14 +112,14 @@ header {
         line-height: 32px;
         text-overflow: ellipsis;
         white-space: nowrap;
-        overflow: hidden;
+        // overflow: hidden;
     }
 
     p {
         font-size : 16px;
         text-overflow: ellipsis;
         white-space: nowrap;
-        overflow: hidden;
+        // overflow: hidden;
     }
 }
 
@@ -138,10 +136,9 @@ header {
 .form_menu {
     position: relative;
     @include flexCenter(row);
-    width:80px;
+    width: 85px;
     height:80px;
-    left:0px;
-    border:2px solid var(--tertiary);
+    left:75px;
     border-radius: 0px 15px 15px 0px;
     background-color: var(--tertiary);
     cursor:pointer;
@@ -155,7 +152,6 @@ input[type="checkbox"].menu_checkbox {
     appearance:none;
     border-radius:50px;
     background: var(--white);
-    outline:none;
     cursor:pointer;
     @include rotTurn(checkMenu, 1s, 0s);
     z-index:4;
@@ -189,18 +185,18 @@ input[type="checkbox"].menu_checkbox:checked::before {
         padding-bottom:80px;
         }
 }
+@keyframes checkMenu {
+    from {transform: rotate(0turn);
+    }
+    to {transform: rotate(1turn);}
+}
 
 @keyframes checkAppearance {
     0% {
-        left:80px;
+        left:85px;
     }
     100% {
         left:0px;
     }
 }
 
-@keyframes checkMenu {
-    from {transform: rotate(0turn);
-    }
-    to {transform: rotate(1turn);}
-}
