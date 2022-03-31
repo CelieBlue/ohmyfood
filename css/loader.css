@@ -8,10 +8,19 @@
   height: 100%;
   z-index: 200;
   background: var(--anthracite);
-  animation: loader 2s linear forwards;
+  opacity: 100%;
+  animation: loaderAnim 2s linear forwards;
   animation-delay: 4000ms;
 }
 
+@keyframes loaderAnim {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0%;
+  }
+}
 .logo_loader {
   font-family: "Shrikhand";
   color: var(--white);
@@ -46,7 +55,7 @@
   height: 50px;
   border-radius: 50%;
   border: 10px solid var(--mediumgrey);
-  animation: spin 60s infinite steps(60);
+  animation: spin 60s forwards steps(60);
 }
 
 .vegetable::before {
@@ -123,15 +132,6 @@
   }
   100% {
     transform: rotate(240deg);
-  }
-}
-@keyframes loader {
-  0% {
-    opacity: 100%;
-  }
-  100% {
-    opacity: 0%;
-    display: none;
   }
 }
 
