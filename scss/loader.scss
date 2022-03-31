@@ -1,0 +1,137 @@
+@import './variables';
+
+#loader {
+    position:fixed;
+    top:0;
+    left:0;
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+    z-index:200;
+    background: var(--anthracite);
+    animation: loader 2s linear forwards;
+    animation-delay: 4000ms;
+}
+
+.logo_loader {
+    font-family: "Shrikhand";
+    color: var(--white);
+    font-size: 28px;
+    width:100%;
+    margin-top:60px;
+    text-align:center;
+}
+.circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-left: -5;
+    width:70px;
+    height: 70px;
+    border: 16px solid var(--white);
+    border-radius: 50%;
+    background: #ffff;
+    border-top: 16px solid var(--primary);
+    border-right: 16px solid var(--tertiary);
+    border-left: 16px solid var(--secondary);
+    border-bottom: 16px solid var(--primary);
+}
+.vegetable {
+    position: absolute;
+    top:-6px;
+    left:-6px;
+    width: 50px;
+    height:50px;
+    border-radius: 50%;
+    border:10px solid var(--mediumgrey);
+    animation: spin 60s infinite steps(60);
+}
+.vegetable::before{
+    content:'\f094';
+    font-family:"Font Awesome 6 Free";
+    font-weight: 900;
+    font-size:22px;
+    position:absolute;
+    top:-70px;
+    left: calc(50% - 12px);
+    color: var(--tertiary);
+}
+.vegetable::after{
+    content:'\f787';
+    font-family:"Font Awesome 6 Free";
+    font-weight: 900;
+    font-size:24px;
+    position:absolute;
+    bottom:-70px;
+    left: calc(50% - 10px);
+    color: var(--tertiary);
+}
+.vegetable:nth-child(2) {
+    transform: rotate(-60deg);
+    animation: spin2 60s infinite steps(60);
+}
+
+.vegetable:nth-child(2)::before {
+    content:'\f2e7';
+    color: var(--secondary);
+}
+
+.vegetable:nth-child(2)::after {
+    content:'\f2e5';
+    color: var(--secondary);
+}
+
+.vegetable:nth-child(3) {
+    transform: rotate(-120deg);
+    animation: spin3 60s infinite steps(60);
+}
+
+.vegetable:nth-child(3)::before {
+    content:'\f816';
+    color: var(--white);
+}
+
+.vegetable:nth-child(3)::after {
+    content:'\f79f';
+    color: var(--white);
+}
+
+@keyframes spin {
+    0% {
+        transform:rotate(0deg);
+    }
+    100% {
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes spin2 {
+    0% {
+        transform:rotate(-60deg);
+    }
+    100% {
+        transform:rotate(300deg);
+    }
+}
+
+@keyframes spin3 {
+    0% {
+        transform:rotate(-120deg);
+    }
+    100% {
+        transform:rotate(240deg);
+    }
+}
+
+@keyframes loader {
+    0% {
+        opacity:100%;
+    }
+
+    100% {
+        opacity:0%;
+        display:none;
+    }
+}
