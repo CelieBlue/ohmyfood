@@ -1,14 +1,11 @@
+@import './variables';
+@import './placeholders';
+@import './mixins';
+
 /** ========== PAGE RESTAURANT ========== **/
 
 /*** Arrow to return to index.html ***/
-.return_home {
-    justify-self: flex-start;
-    width:30px;
-    padding-left:15px;
-    font-size: 25px;
-    font-weight: bold;
-    cursor: pointer;
-}
+
 
 /***** HEADER - LOGO *****/
 header {
@@ -17,6 +14,19 @@ header {
     img {
         @include imgSize(100%, 270px, cover, center, 0px 0px 0px 0px);
     }
+}
+
+#arrow {
+ position: absolute;
+ left: 30px;
+ margin:0px;
+}
+
+.return_home {
+    width: 30px;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 
@@ -98,7 +108,8 @@ header {
     @include spaceBetween;
     cursor:pointer;
     overflow:hidden;
-    animation : dishDown 1.2s linear forwards;
+    animation : dishDown 0.6s linear forwards;
+    opacity:0%;
     transition: all 1s;
     &:hover > .form_menu{
         @include transLeft (checkIn, 500ms, forwards);
@@ -106,6 +117,24 @@ header {
         & > .menu_checkbox {
             @include rotTurn(checkMenu, 500ms, 0s);
         }
+    }
+}
+//DISHES APPEAR ONE AFTER THE OTHER
+@keyframes dishDown {
+    0% {
+        opacity:0%;
+        transform: translate(0px, 20px);
+    }
+    100% {
+        opacity: 100%;
+        transform: translate(0px, 0px);
+    }
+}
+//FOR EACH DISH FROM 1 TO 3, animation-delay increase with 0.2s
+
+@for $i from 1 through 4 {
+    .dish:nth-of-type(#{$i}) {
+        animation-delay: $i*0.2s;
     }
 }
 
@@ -180,22 +209,6 @@ input[type="checkbox"].menu_checkbox::before {
 input[type="checkbox"].menu_checkbox:checked::before {
     color: var(--tertiary);
 }
-
-
-// ORDER BUTTON
-
-.restaurant_button {
-
-    @include flexCenter(row);
-    margin-top:40px;
-    margin-bottom:40px;
-    
-    &.input_button {
-        @include buttonForm(var(--primary), var(--primary), var(--primary), var(--secondary), 50px, var(--text-button), 0px, 0px, 1.08);
-        padding-bottom:80px;
-        }
-}
-
 // CHECKED BOX ROTATION ANIMATION
 @keyframes checkMenu {
     from {transform: rotate(0turn);
@@ -213,21 +226,17 @@ input[type="checkbox"].menu_checkbox:checked::before {
     }
 }
 
-// DISHES APPEAR ONE AFTER THE OTHER
-@keyframes dishDown {
-    0% {
-        opacity:0%;
-        transform: translate(0px, 15px);
-    }
-    100% {
-        opacity: 100%;
-        transform: translate(0px, 0px);
-    }
-}
-//FOR EACH DISH CHILD FROM 1 TO 3, animation-delay increase with 0.2s
 
-@for $i from 1 through 3 {
-    .dish:nth-child(#{$i}) {
-        animation-delay: $i*0.2s;
-    }
+// ORDER BUTTON
+
+.restaurant_button {
+
+    @include flexCenter(row);
+    margin-top:40px;
+    margin-bottom:40px;
+    
+    &.input_button {
+        @include buttonForm(var(--primary), var(--primary), var(--primary), var(--secondary), 50px, var(--text-button), 0px, 0px, 1.08);
+        padding-bottom:80px;
+        }
 }

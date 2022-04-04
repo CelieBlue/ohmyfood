@@ -39,6 +39,7 @@ body {
     color: var(--text-color);
     background-color: var(--lightgrey);
     font-family: "Roboto", Arial, Helvetica, sans-serif ;
+    position:relative;
 }
 
 
@@ -55,15 +56,19 @@ body {
     position:relative;
     box-shadow: rgba(119, 119, 119, 0.45) 0px 3px 5px 0px;
     z-index: 10;
+    
+    a {
+        color: var(--text-color);
+    }
 
     @include tablet-only {
-        height: 80px;
+        height: 65px;
           }
 
     @include desktop-only {
         height: 60px;
         justify-content: flex-start;
-        padding-left:70px;
+        padding-left:90px;
     }
 
 }
@@ -72,19 +77,8 @@ body {
     
     font-family: "Shrikhand";
     color: var(--text-color);
-    font-size: 28px;
+    font-size: 36px;
     cursor: pointer;
-
-    a {
-        color: var(--text-color);
-    }
-
-    @include tablet-only {
-        font-size: 36px;
-    }
-    @include desktop-only {
-        font-size: 30px;
-    }
 }
 
 /* Search */ 
@@ -151,7 +145,7 @@ body {
     @include flexStart;
     margin-right:10%;
     }
-  }
+}
 
 .input_button {
     @include buttonForm(var(--primary), var(--primary), var(--primary), var(--secondary), 50px, var(--text-button), 20px, 40px, 1.08);
@@ -231,7 +225,7 @@ aside {
         flex-direction:column;
         
         p {
-            font-size:22px;
+            font-size:20px;
             line-height: 28px;
             text-align: center;
             padding:25px;

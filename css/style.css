@@ -6,17 +6,14 @@ input[type=checkbox].menu_checkbox::before {
   transform: translate(-50%, -50%);
 }
 
-/** ========== PAGE RESTAURANT ========== **/
-/*** Arrow to return to index.html ***/
-.return_home {
-  justify-self: flex-start;
-  width: 30px;
-  padding-left: 15px;
-  font-size: 25px;
-  font-weight: bold;
-  cursor: pointer;
+input[type=checkbox].menu_checkbox::before {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
+/** ========== PAGE RESTAURANT ========== **/
+/*** Arrow to return to index.html ***/
 /***** HEADER - LOGO *****/
 header {
   position: relative;
@@ -27,6 +24,19 @@ header img {
   object-fit: cover;
   object-position: center;
   border-radius: 0px 0px 0px 0px;
+}
+
+#arrow {
+  position: absolute;
+  left: 30px;
+  margin: 0px;
+}
+
+.return_home {
+  width: 30px;
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 /********* MAIN *********/
@@ -113,7 +123,8 @@ header img {
   align-items: center;
   cursor: pointer;
   overflow: hidden;
-  animation: dishDown 1.2s linear forwards;
+  animation: dishDown 0.6s linear forwards;
+  opacity: 0%;
   transition: all 1s;
 }
 .dish:hover > .form_menu {
@@ -127,6 +138,28 @@ header img {
   animation-duration: 500ms;
   animation-timing-function: ease-in;
   animation-delay: 0s;
+}
+
+@keyframes dishDown {
+  0% {
+    opacity: 0%;
+    transform: translate(0px, 20px);
+  }
+  100% {
+    opacity: 100%;
+    transform: translate(0px, 0px);
+  }
+}
+.dish:nth-of-type(1) {
+  animation-delay: 0.2s;
+}
+
+.dish:nth-of-type(2) {
+  animation-delay: 0.4s;
+}
+
+.dish:nth-of-type(3) {
+  animation-delay: 0.6s;
 }
 
 .dish_container {
@@ -200,6 +233,22 @@ input[type=checkbox].menu_checkbox:checked::before {
   color: var(--tertiary);
 }
 
+@keyframes checkMenu {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+@keyframes checkIn {
+  0% {
+    left: 80px;
+  }
+  100% {
+    left: 0px;
+  }
+}
 .restaurant_button {
   display: flex;
   justify-content: center;
@@ -228,44 +277,6 @@ input[type=checkbox].menu_checkbox:checked::before {
   box-shadow: rgba(59, 59, 59, 0.45) 0px 6px 8px 2px;
   transition: 0.3s ease-out;
   cursor: pointer;
-}
-
-@keyframes checkMenu {
-  from {
-    transform: rotate(0turn);
-  }
-  to {
-    transform: rotate(1turn);
-  }
-}
-@keyframes checkIn {
-  0% {
-    left: 80px;
-  }
-  100% {
-    left: 0px;
-  }
-}
-@keyframes dishDown {
-  0% {
-    opacity: 0%;
-    transform: translate(0px, 15px);
-  }
-  100% {
-    opacity: 100%;
-    transform: translate(0px, 0px);
-  }
-}
-.dish:nth-child(1) {
-  animation-delay: 0.2s;
-}
-
-.dish:nth-child(2) {
-  animation-delay: 0.4s;
-}
-
-.dish:nth-child(3) {
-  animation-delay: 0.6s;
 }
 
 :root {
@@ -297,6 +308,7 @@ body {
   color: var(--text-color);
   background-color: var(--lightgrey);
   font-family: "Roboto", Arial, Helvetica, sans-serif;
+  position: relative;
 }
 
 /************* HEADER *************/
@@ -313,37 +325,27 @@ body {
   box-shadow: rgba(119, 119, 119, 0.45) 0px 3px 5px 0px;
   z-index: 10;
 }
+#logo_container a {
+  color: var(--text-color);
+}
 @media screen and (max-width: 1033px) and (min-width: 700px) {
   #logo_container {
-    height: 80px;
+    height: 65px;
   }
 }
 @media screen and (min-width: 1033px) {
   #logo_container {
     height: 60px;
     justify-content: flex-start;
-    padding-left: 70px;
+    padding-left: 90px;
   }
 }
 
 #logo {
   font-family: "Shrikhand";
   color: var(--text-color);
-  font-size: 28px;
+  font-size: 36px;
   cursor: pointer;
-}
-#logo a {
-  color: var(--text-color);
-}
-@media screen and (max-width: 1033px) and (min-width: 700px) {
-  #logo {
-    font-size: 36px;
-  }
-}
-@media screen and (min-width: 1033px) {
-  #logo {
-    font-size: 30px;
-  }
 }
 
 /* Search */
@@ -512,7 +514,7 @@ aside h3 {
     flex-direction: column;
   }
   .item p {
-    font-size: 22px;
+    font-size: 20px;
     line-height: 28px;
     text-align: center;
     padding: 25px;
