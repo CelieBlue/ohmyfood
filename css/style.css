@@ -1,17 +1,497 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 4 | @import './functions';
- *   |         ^^^^^^^^^^^^^
- *   '
- *   scss\style.scss 4:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 4 \2502  @import './functions';\d\a   \2502          ^^^^^^^^^^^^^\a   \2575 \a   scss\\style.scss 4:9  root stylesheet";
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&family=Shrikhand&display=swap");
+:root {
+  --primary: #9356dc;
+  --secondary: #ff79da;
+  --tertiary: #99e2d0;
+  --anthracite: #353535;
+  --mediumgrey: #eaeaea;
+  --lightgrey: #f6f6f6;
+  --text-color: #000;
+  --text-button: #FFF;
+  --text-color-new: #069c77;
+  --white: #fff;
+  --tablet: 700px;
+  --desktop: 1033px;
 }
+
+/** RESET **/
+*, ::before, ::after {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  width: 100%;
+  margin: 0 auto;
+  color: var(--text-color);
+  background-color: var(--lightgrey);
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  position: relative;
+}
+
+/************* HEADER *************/
+/* LOGO */
+#logo_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: 55px;
+  background-color: var(--white);
+  position: relative;
+  box-shadow: rgba(119, 119, 119, 0.45) 0px 3px 5px 0px;
+  z-index: 10;
+}
+#logo_container a {
+  color: var(--text-color);
+}
+@media screen and (max-width: 1033px) and (min-width: 700px) {
+  #logo_container {
+    height: 65px;
+  }
+}
+@media screen and (min-width: 1033px) {
+  #logo_container {
+    height: 60px;
+    justify-content: flex-start;
+    padding-left: 90px;
+  }
+}
+
+#logo {
+  font-family: "Shrikhand";
+  color: var(--text-color);
+  font-size: 36px;
+  cursor: pointer;
+}
+
+/* Search */
+#search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 50px;
+  background-color: var(--mediumgrey);
+  font-weight: 700;
+}
+@media screen and (min-width: 1033px) {
+  #search {
+    height: 70px;
+    font-size: 20px;
+  }
+}
+
+.map_icon {
+  display: inline-block;
+  padding-right: 15px;
+}
+
+/* RESERVATION */
+#resa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px 20px 30px 20px;
+}
+#resa h1, #resa h2 {
+  text-align: center;
+  padding-bottom: 10px;
+}
+#resa h1 {
+  font-size: 28px;
+}
+#resa h2 {
+  font-weight: 400;
+  font-size: 20px;
+}
+@media screen and (min-width: 1033px) {
+  #resa {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    height: 240px;
+    padding: 20px 50px 0px 50px;
+  }
+  #resa h1 {
+    font-size: clamp(28px, 3vw, 38px);
+    text-align: left;
+  }
+  #resa h2 {
+    font-weight: 400;
+    font-size: clamp(20px, 2vw, 22px);
+    padding-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 1033px) {
+  .text_resa {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-right: 10%;
+  }
+}
+
+.input_button {
+  padding: 15px 20px;
+  background: var(--primary);
+  background: linear-gradient(355deg, var(--primary) 0%, var(--primary) 20%, var(--secondary) 100%);
+  border: none;
+  border-radius: 50px;
+  color: var(--text-button);
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  box-shadow: rgba(112, 111, 111, 0.45) 0px 4px 6px 0px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.input_button:hover {
+  filter: brightness(1.08);
+  box-shadow: rgba(59, 59, 59, 0.45) 0px 6px 8px 2px;
+  transition: 0.3s ease-out;
+  cursor: pointer;
+}
+
+/** CONTAINER WITH THE ASIDE AND THE MAIN **/
+#column_container {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 1033px) {
+  #column_container {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 0 50px;
+  }
+}
+
+/********** ASIDE - FONCTIONING *********/
+aside {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  padding: 0px 10px 40px 20px;
+}
+aside h3 {
+  display: inline-block;
+  font-size: 28px;
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+@media screen and (max-width: 1033px) and (min-width: 700px) {
+  aside h3 {
+    padding-top: 30px;
+  }
+}
+@media screen and (min-width: 1033px) {
+  aside {
+    flex: 40%;
+    order: 2;
+    padding: 0px 10px 40px 20px;
+    border-radius: 0px 30px 0px 0px;
+  }
+  aside h3 {
+    padding-top: 30px;
+  }
+}
+
+.fonctioning {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 1033px) and (min-width: 700px) {
+  .fonctioning {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.item {
+  width: 90%;
+  height: 90px;
+  background-color: var(--lightgrey);
+  border: none;
+  border-radius: 30px;
+  box-shadow: rgba(201, 201, 201, 0.45) 0px 4px 10px 5px;
+  margin: 15px 20px 30px 15px;
+  display: flex;
+  align-items: center;
+}
+.item p {
+  font-size: 18px;
+}
+@media screen and (max-width: 1033px) and (min-width: 700px) {
+  .item {
+    width: 200px;
+    height: 250px;
+    flex-direction: column;
+  }
+  .item p {
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+    padding: 25px;
+  }
+}
+@media screen and (min-width: 1033px) {
+  .item {
+    height: 120px;
+    padding-left: 10px;
+  }
+  .item p {
+    padding-right: 10px;
+  }
+}
+
+aside .number {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin-left: -15px;
+  background-color: var(--primary);
+  color: var(--white);
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+@media screen and (max-width: 1033px) and (min-width: 700px) {
+  aside .number {
+    font-size: 16px;
+    margin-left: 0px;
+    margin-top: -20px;
+    height: 40px;
+    width: 40px;
+  }
+}
+@media screen and (min-width: 1033px) {
+  aside .number {
+    height: 40px;
+    width: 40px;
+    margin-left: -20px;
+    font-size: 18px;
+  }
+}
+
+aside .item_icon {
+  font-size: 20px;
+  color: var(--anthracite);
+  padding: 0px 25px;
+}
+aside .item_icon a {
+  color: var(--primary);
+}
+@media screen and (max-width: 1033px) and (min-width: 700px) {
+  aside .item_icon {
+    padding: 20px;
+  }
+}
+
+/********** MAIN *********/
+#home {
+  padding: 10px 20px 20px 20px;
+}
+#home h3 {
+  display: block;
+  font-size: 28px;
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+@media screen and (min-width: 1033px) {
+  #home {
+    flex: 60%;
+    order: 1;
+    border-radius: 30px 0px 0px 0px;
+    background-color: var(--primary);
+    color: var(--white);
+  }
+  #home h3 {
+    padding: 20px 0px 30px 40px;
+  }
+}
+
+/*** RESTAURANT ***/
+.home_restaurant {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 1033px) and (min-width: 700px) {
+  .home_restaurant {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 1033px) {
+  .home_restaurant {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+  }
+}
+
+.card {
+  position: relative;
+  background-color: var(--white);
+  width: 100%;
+  height: 305px;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  box-shadow: 0px 6px 12px 0px var(--mediumgrey);
+}
+.card h4 {
+  font-size: 20px;
+  line-height: 32px;
+}
+.card p {
+  font-size: 20px;
+}
+.card a {
+  color: var(--text-color);
+}
+@media screen and (max-width: 1033px) and (min-width: 700px) {
+  .card {
+    width: 350px;
+  }
+}
+@media screen and (min-width: 1033px) {
+  .card {
+    max-width: 350px;
+    border: 2px solid var(--white);
+    box-shadow: none;
+  }
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.infos {
+  padding: 10px 20px 20px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.heart {
+  font-size: 30px;
+  margin: 4px 10px 0px 0px;
+}
+
+.card .icon_transparent {
+  position: relative;
+  z-index: 1;
+}
+
+.card .icon_gradient {
+  position: absolute;
+  background: linear-gradient(215deg, var(--primary), var(--secondary));
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  background-clip: text;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+.card .icon_gradient:hover {
+  animation: heart-animation 500ms linear forwards;
+}
+
+@keyframes heart-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.card_new {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 100px;
+  height: 40px;
+  background-color: var(--tertiary);
+  color: var(--text-color-new);
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+/********** FOOTER *********/
+footer {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  background-color: var(--anthracite);
+  color: var(--white);
+}
+footer p {
+  font-size: 20px;
+  line-height: 30px;
+}
+footer .css_validator {
+  border: 0;
+  padding-top: 20px;
+}
+footer a {
+  color: var(--white);
+}
+@media screen and (max-width: 1033px) and (min-width: 700px) {
+  footer {
+    align-items: flex-end;
+  }
+}
+@media screen and (min-width: 1033px) {
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding-right: 50px;
+  }
+  footer p {
+    font-size: 16px;
+    padding-left: 40px;
+  }
+  footer .css_validator {
+    padding-top: 0;
+    align-self: flex-end;
+  }
+}
+
+.logo2 {
+  font-family: "Shrikhand";
+  font-size: 20px;
+  padding-bottom: 15px;
+}
+@media screen and (min-width: 1033px) {
+  .logo2 {
+    font-size: 26px;
+    padding-top: 10px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
