@@ -2,7 +2,6 @@
 @import './placeholders';
 @import './mixins';
 @import './functions';
-@import './restaurant';
 
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&family=Shrikhand&display=swap');
@@ -210,7 +209,7 @@ aside {
 }
 
 .item {
-    @include boxModel (none, 90px, var(--lightgrey), none, 30px, rgba(201, 201, 201, 0.45) 0px 4px 10px 5px);
+    @include boxModel (90%, 90px, var(--lightgrey), none, 30px, rgba(201, 201, 201, 0.45) 0px 4px 10px 5px);
     margin:15px 20px 30px 15px;
     display:flex;
     align-items:center;
@@ -332,8 +331,9 @@ aside .item_icon {
 .card {
     position: relative;
     background-color: var(--white);
+    width: 100%;
     height: 305px;
-    margin-bottom:30px;
+    margin-bottom: 30px;
     border-radius: 20px;
     box-shadow: 0px 6px 12px 0px var(--mediumgrey);
 
@@ -350,11 +350,11 @@ aside .item_icon {
     }
 
     @include tablet-only {
-        width:300px;         
+        width: 350px;
     }
 
     @include desktop-only {
-        width:300px;
+        max-width: 350px;
         border: 2px solid var(--white);
         box-shadow:none;
     }
@@ -391,7 +391,9 @@ aside .item_icon {
     position:absolute;
     background: linear-gradient(215deg, var(--primary), var(--secondary));
     -webkit-text-fill-color:transparent;
+    -moz-text-fill-color:transparent;
     background-clip: text;
+    -moz-background-clip: text;
     -webkit-background-clip: text;
     top:0;
     left:0;
@@ -443,6 +445,11 @@ footer {
        line-height: 30px; 
     }
 
+    .css_validator {
+        border: 0;
+        padding-top: 20px;
+    }
+
     a {
         color: var(--white);
     }
@@ -456,8 +463,12 @@ footer {
         padding-right:50px;
 
         p {
-            font-size: 18px;
+            font-size: 16px;
             padding-left: 40px;
+        }
+        .css_validator {
+            padding-top: 0;
+            align-self: flex-end;
         }
     }
 }
@@ -470,5 +481,6 @@ footer {
 
     @include desktop-only {
         font-size: 26px;
+        padding-top: 10px;
     }
 }

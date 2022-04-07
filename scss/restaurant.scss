@@ -111,12 +111,16 @@ header {
     animation : dishDown 0.6s linear forwards;
     opacity:0%;
     transition: all 1s;
-    &:hover > .form_menu{
+    &:hover > .form_menu {
         @include transLeft (checkIn, 500ms, forwards);
 
         & > .menu_checkbox {
             @include rotTurn(checkMenu, 500ms, 0s);
         }
+
+        // & > .price {
+
+        // }
     }
 }
 //DISHES APPEAR ONE AFTER THE OTHER
@@ -140,6 +144,7 @@ header {
 
 .dish_container {
     width:100%;
+    width:400px;
     padding:10px;
     // margin-right:10px;
 
@@ -165,7 +170,7 @@ header {
 
 .price {
     font-weight: bold;
-    min-width:30px;
+    min-width:45px;
     padding-left:10px;
 }
 
@@ -174,24 +179,24 @@ header {
 .form_menu {
     position: relative;
     @include flexCenter(row);
-    width:80px;
-    height:80px;
-    left:80px;
+    width: 0px;
+    height: 80px;
+    transform: translate(75px);
     border-radius: 0px 15px 15px 0px;
     background-color: var(--tertiary);
-    cursor:pointer;
-    transition:transform 330ms ease-in-out;
+    cursor: pointer;
+    transition: transform 330ms ease-in-out;
 }
 
 input[type="checkbox"].menu_checkbox {
     position: absolute;
-    width:25px;
-    height:25px;
-    appearance:none;
-    border-radius:50px;
+    width: 25px;
+    height: 25px;
+    appearance: none;
+    border-radius: 50px;
     background: var(--white);
-    cursor:pointer;
-    z-index:4;
+    cursor: pointer;
+    z-index: 4;
 }
 
 input[type="checkbox"].menu_checkbox::before {
@@ -219,10 +224,12 @@ input[type="checkbox"].menu_checkbox:checked::before {
 // CHECKED BOX APPEARANCE LEFT TO 0
 @keyframes checkIn {
     0% {
-        left:80px;
+        width: 0px;
+        transform: translateX(75px);
     }
     100% {
-        left:0px;
+        width: 75px;
+        transform: translateX(0px);
     }
 }
 

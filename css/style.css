@@ -1,284 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&family=Shrikhand&display=swap");
-input[type=checkbox].menu_checkbox::before {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-input[type=checkbox].menu_checkbox::before {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-/** ========== PAGE RESTAURANT ========== **/
-/*** Arrow to return to index.html ***/
-/***** HEADER - LOGO *****/
-header {
-  position: relative;
-}
-header img {
-  width: 100%;
-  height: 270px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 0px 0px 0px 0px;
-}
-
-#arrow {
-  position: absolute;
-  left: 30px;
-  margin: 0px;
-}
-
-.return_home {
-  width: 30px;
-  font-size: 25px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-/********* MAIN *********/
-#restaurant {
-  position: relative;
-  margin-top: -30px;
-  padding: 30px 20px 0px 20px;
-  background-color: var(--lightgrey);
-  border-radius: 30px 30px 0px 0px;
-  z-index: 10;
-}
-#restaurant h1 {
-  font-family: "Shrikhand";
-  font-size: 34px;
-  line-height: 38px;
-  font-weight: lighter;
-}
-
-#restaurant_title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/***** DIV CONTAINER WITH THE THREE CATEGORIES OF DISHES *****/
-.categories {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-}
-@media screen and (min-width: 1033px) {
-  .categories {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-}
-
-/***** CATEGORY *****/
-.category {
-  padding-top: 30px;
-}
-.category h2 {
-  position: relative;
-  font-size: 20px;
-  font-weight: 400;
-  text-transform: uppercase;
-  padding-bottom: 25px;
-  padding-left: 5px;
-  /*** Green line under the title of the category ****/
-}
-.category h2::after {
-  content: "";
-  position: absolute;
-  display: inline-block;
-  width: 50px;
-  height: 3px;
-  top: 26px;
-  left: 5px;
-  background-color: var(--tertiary);
-}
-@media screen and (max-width: 1033px) and (min-width: 700px) {
-  .category {
-    padding-left: 8%;
-    padding-right: 8%;
-  }
-}
-@media screen and (min-width: 1033px) {
-  .category {
-    padding-left: 15px;
-  }
-}
-
-.dish {
-  margin-bottom: 20px;
-  width: 100%;
-  height: 80px;
-  background-color: var(--white);
-  border: none;
-  border-radius: 15px;
-  box-shadow: rgba(201, 201, 201, 0.45) 4px 4px 12px 2px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  overflow: hidden;
-  animation: dishDown 0.6s linear forwards;
-  opacity: 0%;
-  transition: all 1s;
-}
-.dish:hover > .form_menu {
-  animation-name: checkIn;
-  animation-duration: 500ms;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
-.dish:hover > .form_menu > .menu_checkbox {
-  animation-name: checkMenu;
-  animation-duration: 500ms;
-  animation-timing-function: ease-in;
-  animation-delay: 0s;
-}
-
-@keyframes dishDown {
-  0% {
-    opacity: 0%;
-    transform: translate(0px, 20px);
-  }
-  100% {
-    opacity: 100%;
-    transform: translate(0px, 0px);
-  }
-}
-.dish:nth-of-type(1) {
-  animation-delay: 0.2s;
-}
-
-.dish:nth-of-type(2) {
-  animation-delay: 0.4s;
-}
-
-.dish:nth-of-type(3) {
-  animation-delay: 0.6s;
-}
-
-.dish_container {
-  width: 100%;
-  padding: 10px;
-}
-.dish_container h3 {
-  font-size: 20px;
-  line-height: 32px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-.dish_container p {
-  font-size: 16px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.dish_infos {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.price {
-  font-weight: bold;
-  min-width: 30px;
-  padding-left: 10px;
-}
-
-.form_menu {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  width: 80px;
-  height: 80px;
-  left: 80px;
-  border-radius: 0px 15px 15px 0px;
-  background-color: var(--tertiary);
-  cursor: pointer;
-  transition: transform 330ms ease-in-out;
-}
-
-input[type=checkbox].menu_checkbox {
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  appearance: none;
-  border-radius: 50px;
-  background: var(--white);
-  cursor: pointer;
-  z-index: 4;
-}
-
-input[type=checkbox].menu_checkbox::before {
-  content: "\f00c";
-  font-family: "Font Awesome 5 Free";
-  position: absolute;
-  border-radius: 50px;
-  font-weight: bold;
-  font-size: 22px;
-  color: var(--tertiary);
-  z-index: 5;
-}
-
-input[type=checkbox].menu_checkbox:checked::before {
-  color: var(--tertiary);
-}
-
-@keyframes checkMenu {
-  from {
-    transform: rotate(0turn);
-  }
-  to {
-    transform: rotate(1turn);
-  }
-}
-@keyframes checkIn {
-  0% {
-    left: 80px;
-  }
-  100% {
-    left: 0px;
-  }
-}
-.restaurant_button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-.restaurant_button.input_button {
-  padding: 15px 20px;
-  background: var(--primary);
-  background: linear-gradient(355deg, var(--primary) 0%, var(--primary) 20%, var(--secondary) 100%);
-  border: none;
-  border-radius: 50px;
-  color: var(--text-button);
-  font-size: 18px;
-  letter-spacing: 1px;
-  font-weight: 500;
-  box-shadow: rgba(112, 111, 111, 0.45) 0px 4px 6px 0px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding-bottom: 80px;
-}
-.restaurant_button.input_button:hover {
-  filter: brightness(1.08);
-  box-shadow: rgba(59, 59, 59, 0.45) 0px 6px 8px 2px;
-  transition: 0.3s ease-out;
-  cursor: pointer;
-}
-
 :root {
   --primary: #9356dc;
   --secondary: #ff79da;
@@ -494,7 +215,7 @@ aside h3 {
 }
 
 .item {
-  width: none;
+  width: 90%;
   height: 90px;
   background-color: var(--lightgrey);
   border: none;
@@ -623,6 +344,7 @@ aside .item_icon a {
 .card {
   position: relative;
   background-color: var(--white);
+  width: 100%;
   height: 305px;
   margin-bottom: 30px;
   border-radius: 20px;
@@ -640,12 +362,12 @@ aside .item_icon a {
 }
 @media screen and (max-width: 1033px) and (min-width: 700px) {
   .card {
-    width: 300px;
+    width: 350px;
   }
 }
 @media screen and (min-width: 1033px) {
   .card {
-    width: 300px;
+    max-width: 350px;
     border: 2px solid var(--white);
     box-shadow: none;
   }
@@ -681,7 +403,9 @@ aside .item_icon a {
   position: absolute;
   background: linear-gradient(215deg, var(--primary), var(--secondary));
   -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
   background-clip: text;
+  -moz-background-clip: text;
   -webkit-background-clip: text;
   top: 0;
   left: 0;
@@ -728,6 +452,10 @@ footer p {
   font-size: 20px;
   line-height: 30px;
 }
+footer .css_validator {
+  border: 0;
+  padding-top: 20px;
+}
 footer a {
   color: var(--white);
 }
@@ -745,8 +473,12 @@ footer a {
     padding-right: 50px;
   }
   footer p {
-    font-size: 18px;
+    font-size: 16px;
     padding-left: 40px;
+  }
+  footer .css_validator {
+    padding-top: 0;
+    align-self: flex-end;
   }
 }
 
@@ -758,6 +490,7 @@ footer a {
 @media screen and (min-width: 1033px) {
   .logo2 {
     font-size: 26px;
+    padding-top: 10px;
   }
 }
 

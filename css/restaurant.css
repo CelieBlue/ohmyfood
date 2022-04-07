@@ -160,6 +160,7 @@ header img {
 
 .dish_container {
   width: 100%;
+  width: 400px;
   padding: 10px;
 }
 .dish_container h3 {
@@ -184,7 +185,7 @@ header img {
 
 .price {
   font-weight: bold;
-  min-width: 30px;
+  min-width: 45px;
   padding-left: 10px;
 }
 
@@ -194,9 +195,9 @@ header img {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  width: 80px;
+  width: 0px;
   height: 80px;
-  left: 80px;
+  transform: translate(75px);
   border-radius: 0px 15px 15px 0px;
   background-color: var(--tertiary);
   cursor: pointer;
@@ -239,10 +240,12 @@ input[type=checkbox].menu_checkbox:checked::before {
 }
 @keyframes checkIn {
   0% {
-    left: 80px;
+    width: 0px;
+    transform: translateX(75px);
   }
   100% {
-    left: 0px;
+    width: 75px;
+    transform: translateX(0px);
   }
 }
 .restaurant_button {
