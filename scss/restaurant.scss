@@ -52,6 +52,31 @@ header {
     @include spaceBetween;
 }
 
+#restaurant_title .icon_transparent {
+    position: relative;
+    z-index: 1;
+    cursor: pointer
+}
+
+#restaurant_title .icon_gradient {
+    position: absolute;
+    background: linear-gradient(215deg, var(--primary), var(--secondary));
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    background-clip: text;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 2;
+    cursor: pointer;
+
+    &:hover {
+        animation: heart-animation 500ms linear forwards;
+    }
+}
+
 /***** DIV CONTAINER WITH THE THREE CATEGORIES OF DISHES *****/
 
 .categories {
@@ -62,7 +87,9 @@ header {
     @include desktop-only {
         flex-direction:row;
         flex-wrap: wrap;
-        justify-content: space-around;
+        overflow: hidden;
+        flex-shrink: 0;
+        // justify-content: space-between;
     }
 }
 
@@ -92,8 +119,7 @@ header {
         }
     }
     @include tablet-only {
-        padding-left:8%;
-        padding-right:8%;
+        padding:30 8% 0 8%;
         }
     @include desktop-only {
         padding-left:15px;
@@ -111,16 +137,12 @@ header {
     animation : dishDown 0.6s linear forwards;
     opacity:0%;
     transition: all 1s;
-    &:hover > .form_menu {
+    &:hover .form_menu {
         @include transLeft (checkIn, 500ms, forwards);
 
-        & > .menu_checkbox {
+        & .menu_checkbox {
             @include rotTurn(checkMenu, 500ms, 0s);
         }
-
-        // & > .price {
-
-        // }
     }
 }
 //DISHES APPEAR ONE AFTER THE OTHER
@@ -143,9 +165,9 @@ header {
 }
 
 .dish_container {
-    width:100%;
-    width:400px;
+    width: 100%;
     padding:10px;
+    overflow:hidden;
     // margin-right:10px;
 
     h3 {
@@ -164,14 +186,18 @@ header {
     }
 }
 
-.dish_infos {
-    @include spaceBetween;
+.dish_left {
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .price {
     font-weight: bold;
     min-width:45px;
-    padding-left:10px;
+    padding-right:10px;
+    margin-right: 0px;
+    transition: margin-right 1s;
 }
 
 // BLOCK BLUE - CHECK ROTATION
@@ -179,12 +205,13 @@ header {
 .form_menu {
     position: relative;
     @include flexCenter(row);
+    flex-shrink: 0;
     width: 0px;
     height: 80px;
-    transform: translate(75px);
     border-radius: 0px 15px 15px 0px;
     background-color: var(--tertiary);
     cursor: pointer;
+    transform: translateX(75px);
     transition: transform 330ms ease-in-out;
 }
 
@@ -214,6 +241,7 @@ input[type="checkbox"].menu_checkbox::before {
 input[type="checkbox"].menu_checkbox:checked::before {
     color: var(--tertiary);
 }
+
 // CHECKED BOX ROTATION ANIMATION
 @keyframes checkMenu {
     from {transform: rotate(0turn);

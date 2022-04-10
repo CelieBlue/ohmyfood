@@ -13,6 +13,7 @@
     transform-origin: top;
 }
 
+// Animation to make the loader spiner disappear and show the index.html
 @keyframes loaderAnim {
     0% {
         opacity:100%;
@@ -52,6 +53,8 @@
     border-left: 16px solid var(--secondary);
     border-bottom: 16px solid var(--primary);
 }
+
+// Pair of vegetables and cooking tools 
 .vegetable {
     position: absolute;
     top:-6px;
@@ -62,6 +65,8 @@
     border:10px solid var(--mediumgrey);
     animation: spin 60s forwards steps(60);
 }
+
+// Second pair of vegetables and cooking tools
 .vegetable::before{
     content:'\f094';
     font-family:"Font Awesome 6 Free";
@@ -72,6 +77,8 @@
     left: calc(50% - 12px);
     color: var(--tertiary);
 }
+
+// Third pair of vegetables and cooking tools
 .vegetable::after{
     content:'\f787';
     font-family:"Font Awesome 6 Free";
@@ -82,36 +89,36 @@
     left: calc(50% - 10px);
     color: var(--tertiary);
 }
+
+// Animation of the second pair starting with -60 degrees offset
 .vegetable:nth-child(2) {
     transform: rotate(-60deg);
     animation: spin2 60s infinite steps(60);
 }
-
 .vegetable:nth-child(2)::before {
     content:'\f2e7';
     color: var(--secondary);
 }
-
 .vegetable:nth-child(2)::after {
     content:'\f2e5';
     color: var(--secondary);
 }
 
+// Animation of the second pair starting with -120 degrees offset
 .vegetable:nth-child(3) {
     transform: rotate(-120deg);
     animation: spin3 60s infinite steps(60);
 }
-
 .vegetable:nth-child(3)::before {
     content:'\f816';
     color: var(--white);
 }
-
 .vegetable:nth-child(3)::after {
     content:'\f79f';
     color: var(--white);
 }
 
+//Spin for the first pair of vegetables
 @keyframes spin {
     0% {
         transform:rotate(0deg);
@@ -121,6 +128,7 @@
     }
 }
 
+//Spin for the second pair of vegetables at -60deg
 @keyframes spin2 {
     0% {
         transform:rotate(-60deg);
@@ -130,6 +138,7 @@
     }
 }
 
+//Spin for the second pair of vegetables at -120deg
 @keyframes spin3 {
     0% {
         transform:rotate(-120deg);

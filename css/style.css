@@ -397,6 +397,7 @@ aside .item_icon a {
 .card .icon_transparent {
   position: relative;
   z-index: 1;
+  cursor: pointer;
 }
 
 .card .icon_gradient {

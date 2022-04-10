@@ -53,6 +53,30 @@ header img {
   align-items: center;
 }
 
+#restaurant_title .icon_transparent {
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+#restaurant_title .icon_gradient {
+  position: absolute;
+  background: linear-gradient(215deg, var(--primary), var(--secondary));
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  background-clip: text;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+#restaurant_title .icon_gradient:hover {
+  animation: heart-animation 500ms linear forwards;
+}
+
 /***** DIV CONTAINER WITH THE THREE CATEGORIES OF DISHES *****/
 .categories {
   display: flex;
@@ -63,7 +87,8 @@ header img {
   .categories {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    overflow: hidden;
+    flex-shrink: 0;
   }
 }
 
@@ -92,8 +117,7 @@ header img {
 }
 @media screen and (max-width: 1033px) and (min-width: 700px) {
   .category {
-    padding-left: 8%;
-    padding-right: 8%;
+    padding: 30 8% 0 8%;
   }
 }
 @media screen and (min-width: 1033px) {
@@ -119,13 +143,13 @@ header img {
   opacity: 0%;
   transition: all 1s;
 }
-.dish:hover > .form_menu {
+.dish:hover .form_menu {
   animation-name: checkIn;
   animation-duration: 500ms;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
-.dish:hover > .form_menu > .menu_checkbox {
+.dish:hover .form_menu .menu_checkbox {
   animation-name: checkMenu;
   animation-duration: 500ms;
   animation-timing-function: ease-in;
@@ -160,8 +184,8 @@ header img {
 
 .dish_container {
   width: 100%;
-  width: 400px;
   padding: 10px;
+  overflow: hidden;
 }
 .dish_container h3 {
   font-size: 20px;
@@ -177,16 +201,18 @@ header img {
   overflow: hidden;
 }
 
-.dish_infos {
+.dish_left {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
 }
 
 .price {
   font-weight: bold;
   min-width: 45px;
-  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 0px;
+  transition: margin-right 1s;
 }
 
 .form_menu {
@@ -195,12 +221,13 @@ header img {
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  flex-shrink: 0;
   width: 0px;
   height: 80px;
-  transform: translate(75px);
   border-radius: 0px 15px 15px 0px;
   background-color: var(--tertiary);
   cursor: pointer;
+  transform: translateX(75px);
   transition: transform 330ms ease-in-out;
 }
 
