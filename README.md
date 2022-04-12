@@ -86,7 +86,8 @@ le_delice_des_sens.jpg
 **pages**  
         _index.scss  
         _loader.scss  
-        _restaurant.scss  
+        _restaurant.scss 
+        
 main.scss  
 
 a_la_française.html  
