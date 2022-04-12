@@ -31,57 +31,57 @@ base/
     _fonts.scss  
     _reset.scss
 
-components/
-    _buttons.scss
+components/  
+    _buttons.scss  
 
-helpers/
-    _mixins.scss
-    _placeholders.scss
+helpers/  
+    _mixins.scss  
+    _placeholders.scss  
     _variables.scss
 
-layout/
-    _footer.scss
+layout/  
+    _footer.scss  
     _header.scss
 
-pages/
-    _index.scss
-    _loader.scss
+pages/  
+    _index.scss  
+    _loader.scss  
     _restaurant.scss
 
 main.scss
 
 ## ARCHITECTURE GLOBALE DU SITE
 
-css
-    main.css
+css  
+    main.css  
     main.css.map
 
-images
-    a_la_francaise.jpg
-    le_delice_des_sens.jpg
-    a_la_francaise.jpg
+images  
+    a_la_francaise.jpg  
+    le_delice_des_sens.jpg  
+    a_la_francaise.jpg  
     le_delice_des_sens.jpg
 
-scss
-    animations
-        _keyframes.scss
-    base
-        _fonts.scss
+scss  
+    animations  
+        _keyframes.scss  
+    base  
+        _fonts.scss  
         _reset.scss
-    components
-        _buttons.scss
-    helpers
-        _mixins.scss
-        _placeholders.scss
-        _variables.scss
-    layout
-        _footer.scss
-        _header.scss
-    pages
-        _index.scss
-        _loader.scss
-        _restaurant.scss
-main.scss
+    components  
+        _buttons.scss  
+    helpers  
+        _mixins.scss  
+        _placeholders.scss  
+        _variables.scss  
+    layout  
+        _footer.scss  
+        _header.scss  
+    pages  
+        _index.scss  
+        _loader.scss  
+        _restaurant.scss  
+main.scss  
 
 a_la_française.html
 index.html
