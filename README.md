@@ -24,67 +24,67 @@ Il est demandé d'employer les technologies suvantes :
 
 ## ARCHITECTURE DES FICHIERS SASS
 
-animations/
-    _keygrames.scss
+animations/  
+    _keygrames.scss  
+  
+base/  
+    _fonts.scss  
+    _reset.scss  
+  
+components/  
+    _buttons.scss  
+  
+helpers/  
+    _mixins.scss  
+    _placeholders.scss  
+    _variables.scss  
+  
+layout/  
+    _footer.scss  
+    _header.scss  
 
-base/
-    _fonts.scss
-    _reset.scss
-
-components/
-    _buttons.scss
-
-helpers/
-    _mixins.scss
-    _placeholders.scss
-    _variables.scss
-
-layout/
-    _footer.scss
-    _header.scss
-
-pages/
-    _index.scss
-    _loader.scss
-    _restaurant.scss
-
-main.scss
-
-## ARCHITECTURE GLOBALE DU SITE
-
-css
-    main.css
-    main.css.map
-
-images
-    a_la_francaise.jpg
-    le_delice_des_sens.jpg
-    a_la_francaise.jpg
-    le_delice_des_sens.jpg
-
-scss
-    animations
-        _keyframes.scss
-    base
-        _fonts.scss
-        _reset.scss
-    components
-        _buttons.scss
-    helpers
-        _mixins.scss
-        _placeholders.scss
-        _variables.scss
-    layout
-        _footer.scss
-        _header.scss
-    pages
-        _index.scss
-        _loader.scss
-        _restaurant.scss
-main.scss
-
-a_la_française.html
-index.html
-la_note_enchantee.html
-le_delice_des_sens.html
+pages/  
+    _index.scss  
+    _loader.scss  
+    _restaurant.scss  
+  
+main.scss  
+  
+## ARCHITECTURE GLOBALE DU SITE  
+   
+css  
+    main.css  
+    main.css.map  
+      
+images  
+    a_la_francaise.jpg 
+    le_delice_des_sens.jpg  
+    a_la_francaise.jpg  
+    le_delice_des_sens.jpg  
+  
+scss  
+    animations  
+        _keyframes.scss  
+    base  
+        _fonts.scss  
+        _reset.scss  
+    components  
+        _buttons.scss  
+    helpers  
+        _mixins.scss  
+        _placeholders.scss  
+        _variables.scss  
+    layout  
+        _footer.scss  
+        _header.scss  
+    pages  
+        _index.scss  
+        _loader.scss  
+        _restaurant.scss  
+main.scss  
+  
+a_la_française.html  
+index.html  
+la_note_enchantee.html  
+le_delice_des_sens.html  
 palette_du_gout.html
