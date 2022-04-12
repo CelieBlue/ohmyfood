@@ -21,3 +21,5 @@ Il est demandé d'employer les technologies suvantes :
 - HTML/CSS
 - Préprocesseur SASS
 - Versionning sur GitHub
+
+## ARCHITECTURE DES FICHIERS

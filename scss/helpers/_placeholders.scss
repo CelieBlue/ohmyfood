@@ -1,0 +1,37 @@
+@mixin spaceBetween {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flexStart {
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:flex-start;
+}
+
+%centerElement {
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+
+// Heart with gradient on hover
+@mixin heartGradient {
+    background: linear-gradient(215deg, var(--primary), var(--secondary));
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    background-clip: text;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    top:0;
+    left:0;
+    opacity: 0;
+    z-index:2;
+    cursor:pointer;
+
+    &:hover {
+        animation: heart-animation 500ms linear forwards;
+    }
+}

@@ -1,0 +1,24 @@
+// COMPONENTS
+@import 'components/buttons';
+
+// HELPERS
+@import 'helpers/variables';
+@import 'helpers/placeholders';
+@import 'helpers/mixins';
+
+// BASE
+@import 'base/reset';
+@import 'base/fonts';
+
+
+// LAYOUT
+@import 'layout/header';
+@import 'layout/footer';
+
+// PAGES
+@import 'pages/loader';
+@import 'pages/index';
+@import 'pages/restaurant';
+
+@import 'animations/keyframes';
+

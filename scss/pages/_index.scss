@@ -1,83 +1,4 @@
-@import './variables';
-@import './placeholders';
-@import './mixins';
-
-@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&family=Shrikhand&display=swap');
-
-:root {
-    --primary: #{$primary-violet};
-    --secondary: #{$secondary-pink};
-    --tertiary: #{$tertiary-green};
-    --anthracite: #{$anthracite};
-    --mediumgrey: #{$mediumgrey};
-    --lightgrey: #{$lightgrey};
-    --text-color: #{$text-color};
-    --text-button: #{$text-button};
-    --text-color-new: #{$text-color-new};
-    --white: #{$white};
-    --tablet: #{$tablet};
-    --desktop: #{$desktop};
-    // --breakpoints: #{$breakpoints};
-}
-
-
-/** RESET **/
-
-*, ::before, ::after {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    text-decoration: none;
-}
-
-body {
-    width:100%;
-    margin:0 auto;
-    color: var(--text-color);
-    background-color: var(--lightgrey);
-    font-family: "Roboto", Arial, Helvetica, sans-serif ;
-    position:relative;
-}
-
-
-/************* HEADER *************/
-
-
-/* LOGO */
-
-#logo_container {
-    @include flexCenter(row);
-    width:100%;
-    height:55px;
-    background-color: var(--white);
-    position:relative;
-    box-shadow: rgba(119, 119, 119, 0.45) 0px 3px 5px 0px;
-    z-index: 10;
-    
-    a {
-        color: var(--text-color);
-    }
-
-    @include tablet-only {
-        height: 65px;
-          }
-
-    @include desktop-only {
-        height: 60px;
-        justify-content: flex-start;
-        padding-left:90px;
-    }
-
-}
-
-#logo {
-    
-    font-family: "Shrikhand";
-    color: var(--text-color);
-    font-size: 36px;
-    cursor: pointer;
-}
+/** ========== PAGE INDEX ========== **/
 
 /* Search */ 
 
@@ -376,45 +297,19 @@ aside .item_icon {
     margin: 4px 10px 0px 0px;
 }
 
-
 //HEART ICON - 2 div one on the other :
 //One div with the heart with black border
 //One div with the solid heart with gradient
 
-.card .icon_transparent {
+.heart_transparent {
     position: relative;
     z-index: 1; 
     cursor: pointer;
 }
 
-.card .icon_gradient {
+.heart_gradient {
     position: absolute;
-    background: linear-gradient(215deg, var(--primary), var(--secondary));
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-    background-clip: text;
-    -moz-background-clip: text;
-    -webkit-background-clip: text;
-    top:0;
-    left:0;
-    opacity: 0;
-    z-index:2;
-    cursor:pointer;
-
-    &:hover {
-        animation: heart-animation 500ms linear forwards;
-    }
-}
-
-@keyframes heart-animation {
-    0% 
-    {    
-    opacity: 0;    
-    }
-
-100%{
-    opacity:1;
-    }
+    @include heartGradient;
 }
 
 .card_new {
@@ -431,56 +326,56 @@ aside .item_icon {
 
 
 
-/********** FOOTER *********/
+// /********** FOOTER *********/
 
-footer {
-    display:flex;
-    flex-direction:column;
-    padding:25px;
-    background-color: var(--anthracite);
-    color: var(--white);
+// footer {
+//     display:flex;
+//     flex-direction:column;
+//     padding:25px;
+//     background-color: var(--anthracite);
+//     color: var(--white);
 
-    p {
-       font-size: 20px;
-       line-height: 30px; 
-    }
+//     p {
+//        font-size: 20px;
+//        line-height: 30px; 
+//     }
 
-    .css_validator {
-        border: 0;
-        padding-top: 20px;
-    }
+//     .css_validator {
+//         border: 0;
+//         padding-top: 20px;
+//     }
 
-    a {
-        color: var(--white);
-    }
+//     a {
+//         color: var(--white);
+//     }
 
-    @include tablet-only {
-        align-items:flex-end;
-    }
+//     @include tablet-only {
+//         align-items:flex-end;
+//     }
 
-    @include desktop-only {
-        @include flexCenter(row);
-        padding-right:50px;
+//     @include desktop-only {
+//         @include flexCenter(row);
+//         padding-right:50px;
 
-        p {
-            font-size: 16px;
-            padding-left: 40px;
-        }
-        .css_validator {
-            padding-top: 0;
-            align-self: flex-end;
-        }
-    }
-}
+//         p {
+//             font-size: 16px;
+//             padding-left: 40px;
+//         }
+//         .css_validator {
+//             padding-top: 0;
+//             align-self: flex-end;
+//         }
+//     }
+// }
 
 
-.logo2 {
-    font-family: "Shrikhand";
-    font-size: 20px;
-    padding-bottom: 15px;
+// .logo2 {
+//     font-family: "Shrikhand";
+//     font-size: 20px;
+//     padding-bottom: 15px;
 
-    @include desktop-only {
-        font-size: 26px;
-        padding-top: 10px;
-    }
-}
+//     @include desktop-only {
+//         font-size: 26px;
+//         padding-top: 10px;
+//     }
+// }

@@ -1,25 +1,25 @@
-@import './variables';
-@import './placeholders';
-@import './mixins';
-
 /** ========== PAGE RESTAURANT ========== **/
-
-/*** Arrow to return to index.html ***/
-
 
 /***** HEADER - LOGO *****/
 header {
-    position:relative;
+    position: relative;
 
     img {
         @include imgSize(100%, 270px, cover, center, 0px 0px 0px 0px);
     }
+    @include desktop-only {
+        img {
+            object-position: 50% 60%;
+        }
+    }
 }
+
+// Arrow return index.html
 
 #arrow {
  position: absolute;
  left: 30px;
- margin:0px;
+ margin: 0px;
 }
 
 .return_home {
@@ -33,18 +33,18 @@ header {
 /********* MAIN *********/
 
 #restaurant {
-    position:relative;
-    margin-top:-30px;
+    position: relative;
+    margin-top: -30px;
     padding: 30px 20px 0px 20px;
     background-color: var(--lightgrey);
     border-radius: 30px 30px 0px 0px;
-    z-index:10;
+    z-index: 10;
     
     h1 {
         font-family: "Shrikhand";
         font-size: 34px;
-        line-height:38px;
-        font-weight:lighter;
+        line-height: 38px;
+        font-weight: lighter;
     }
 }
 
@@ -52,29 +52,23 @@ header {
     @include spaceBetween;
 }
 
-#restaurant_title .icon_transparent {
+// HEART WITH ANIMATION: gradient appears on hover
+// See the scss/animations/keyframes.scss file
+
+#restaurant_title .heart {
+    font-size:30px;
+    margin: 4px 10px 0px 0px;
+}
+
+#restaurant_title .heart_transparent {
     position: relative;
     z-index: 1;
     cursor: pointer
 }
 
-#restaurant_title .icon_gradient {
+#restaurant_title .heart_gradient {
     position: absolute;
-    background: linear-gradient(215deg, var(--primary), var(--secondary));
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-    background-clip: text;
-    -moz-background-clip: text;
-    -webkit-background-clip: text;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    z-index: 2;
-    cursor: pointer;
-
-    &:hover {
-        animation: heart-animation 500ms linear forwards;
-    }
+    @include heartGradient;
 }
 
 /***** DIV CONTAINER WITH THE THREE CATEGORIES OF DISHES *****/
@@ -89,11 +83,11 @@ header {
         flex-wrap: wrap;
         overflow: hidden;
         flex-shrink: 0;
-        // justify-content: space-between;
+        justify-content: space-around;
     }
 }
 
-/***** CATEGORY *****/
+/***** CATEGORY OF DISHES *****/
 
 .category {
     padding-top: 30px;
@@ -119,14 +113,16 @@ header {
         }
     }
     @include tablet-only {
-        padding:30 8% 0 8%;
+        padding:30px 8% 0px 8%;
         }
     @include desktop-only {
-        padding-left:15px;
+        padding-right: 10px;
     }
 }
 
-// DISH BLOCK
+// DISH BLOCK WITH ANIMATIONS
+// See the scss/helpers/mixin.scss file for the include
+// See the scss/animations/keyframes.scss file
 
 .dish {
     margin-bottom:20px;
@@ -144,26 +140,12 @@ header {
             @include rotTurn(checkMenu, 500ms, 0s);
         }
     }
-}
-//DISHES APPEAR ONE AFTER THE OTHER
-@keyframes dishDown {
-    0% {
-        opacity:0%;
-        transform: translate(0px, 20px);
-    }
-    100% {
-        opacity: 100%;
-        transform: translate(0px, 0px);
-    }
-}
-//FOR EACH DISH FROM 1 TO 3, animation-delay increase with 0.2s
-
-@for $i from 1 through 4 {
-    .dish:nth-of-type(#{$i}) {
-        animation-delay: $i*0.2s;
+    @include desktop-only {
+        width: 400px;
     }
 }
 
+//DISH INFOS
 .dish_container {
     width: 100%;
     padding:10px;
@@ -186,6 +168,7 @@ header {
     }
 }
 
+// PRICE and GREEN BOX WITH CHECK
 .dish_left {
     display:flex;
     justify-content: flex-end;
@@ -200,8 +183,9 @@ header {
     transition: margin-right 1s;
 }
 
-// BLOCK BLUE - CHECK ROTATION
+// GREEN BOX - CHECK ROTATION
 
+//Green Box
 .form_menu {
     position: relative;
     @include flexCenter(row);
@@ -215,6 +199,7 @@ header {
     transition: transform 330ms ease-in-out;
 }
 
+// Green Check
 input[type="checkbox"].menu_checkbox {
     position: absolute;
     width: 25px;
@@ -238,31 +223,7 @@ input[type="checkbox"].menu_checkbox::before {
     z-index: 5; 
 }
 
-input[type="checkbox"].menu_checkbox:checked::before {
-    color: var(--tertiary);
-}
-
-// CHECKED BOX ROTATION ANIMATION
-@keyframes checkMenu {
-    from {transform: rotate(0turn);
-    }
-    to {transform: rotate(1turn);}
-}
-
-// CHECKED BOX APPEARANCE LEFT TO 0
-@keyframes checkIn {
-    0% {
-        width: 0px;
-        transform: translateX(75px);
-    }
-    100% {
-        width: 75px;
-        transform: translateX(0px);
-    }
-}
-
-
-// ORDER BUTTON
+// BUTTON FOR ORDER
 
 .restaurant_button {
 

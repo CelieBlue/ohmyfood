@@ -1,0 +1,53 @@
+/********** FOOTER *********/
+
+footer {
+    display:flex;
+    flex-direction:column;
+    padding:25px;
+    background-color: var(--anthracite);
+    color: var(--white);
+
+    p {
+       font-size: 20px;
+       line-height: 30px; 
+    }
+
+    .css_validator {
+        border: 0;
+        padding-top: 20px;
+    }
+
+    a {
+        color: var(--white);
+    }
+
+    @include tablet-only {
+        align-items:flex-end;
+    }
+
+    @include desktop-only {
+        @include flexCenter(row);
+        padding-right:50px;
+
+        p {
+            font-size: 16px;
+            padding-left: 40px;
+        }
+        .css_validator {
+            padding-top: 0;
+            align-self: flex-end;
+        }
+    }
+}
+
+
+.logo2 {
+    font-family: "Shrikhand";
+    font-size: 20px;
+    padding-bottom: 15px;
+
+    @include desktop-only {
+        font-size: 26px;
+        padding-top: 10px;
+    }
+}

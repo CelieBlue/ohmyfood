@@ -1,0 +1,50 @@
+//*******  ANIMATIONS   *******
+
+// HEART WITH GRADIENT ANIMATION
+@keyframes heart-animation {
+    0% 
+        {    
+        opacity: 0;    
+        }
+    
+    100%{
+        opacity:1;
+        }
+    }
+
+//DISHES APPEARING ONE AFTER THE OTHER
+@keyframes dishDown {
+    0% {
+        opacity:0%;
+        transform: translate(0px, 20px);
+    }
+    100% {
+        opacity: 100%;
+        transform: translate(0px, 0px);
+    }
+}
+//FOR EACH DISH FROM 1 TO 3, animation-delay increase with 0.2s
+@for $i from 1 through 4 {
+    .dish:nth-of-type(#{$i}) {
+        animation-delay: $i*0.2s;
+    }
+}
+
+// CHECKED BOX ROTATION ANIMATION
+@keyframes checkMenu {
+    from {transform: rotate(0turn);
+    }
+    to {transform: rotate(1turn);}
+}
+
+// CHECKED BOX APPEARANCE 75PX LEFT TO 0
+@keyframes checkIn {
+    0% {
+        width: 0px;
+        transform: translateX(75px);
+    }
+    100% {
+        width: 75px;
+        transform: translateX(0px);
+    }
+}
