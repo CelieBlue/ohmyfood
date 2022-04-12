@@ -47,7 +47,7 @@ pages/
     _index.scss
     _loader.scss
     _restaurant.scss
-
+    
 main.scss
 
 ## ARCHITECTURE GLOBALE DU SITE
