@@ -24,11 +24,11 @@ Il est demandé d'employer les technologies suvantes :
 
 ## ARCHITECTURE DES FICHIERS SASS
 
-animations/
-    _keygrames.scss
-
-base/
-    _fonts.scss
+animations/  
+    _keygrames.scss  
+  
+base/  
+    _fonts.scss  
     _reset.scss
 
 components/
