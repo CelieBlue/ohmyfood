@@ -24,26 +24,26 @@ Il est demandé d'employer les technologies suvantes :
 
 ## ARCHITECTURE DES FICHIERS SASS
 
-animations/  
+**animations**  
     _keygrames.scss  
   
-base/  
+**base**  
     _fonts.scss  
     _reset.scss
 
-components/  
+**components**  
     _buttons.scss  
 
-helpers/  
+**helpers**  
     _mixins.scss  
     _placeholders.scss  
     _variables.scss
 
-layout/  
+**layout**  
     _footer.scss  
     _header.scss
 
-pages/  
+**pages**  
     _index.scss  
     _loader.scss  
     _restaurant.scss
@@ -63,21 +63,21 @@ main.scss
     le_delice_des_sens.jpg
 
 ### scss  
-    #### animations  
+    **animations**  
         _keyframes.scss  
-    #### base  
+    **base**  
         _fonts.scss  
         _reset.scss
-    #### components  
+    **components**  
         _buttons.scss  
-    #### helpers  
+    **helpers**  
         _mixins.scss  
         _placeholders.scss  
         _variables.scss  
-    #### layout  
+    **layout**  
         _footer.scss  
         _header.scss  
-    #### pages  
+    **pages**  
         _index.scss  
         _loader.scss  
         _restaurant.scss  
