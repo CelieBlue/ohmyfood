@@ -63,21 +63,27 @@ le_delice_des_sens.jpg
 le_delice_des_sens.jpg
 
 ### scss  
-animations  
-        _keyframes.scss  
-base  
+
+**animations**  
+        _keyframes.scss
+        
+**base**  
         _fonts.scss  
         _reset.scss
-components  
+        
+**components**  
         _buttons.scss  
-helpers  
+        
+**helpers**  
         _mixins.scss  
         _placeholders.scss  
-        _variables.scss  
-layout  
+        _variables.scss 
+        
+**layout**  
         _footer.scss  
         _header.scss  
-pages  
+        
+**pages**  
         _index.scss  
         _loader.scss  
         _restaurant.scss  
