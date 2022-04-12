@@ -94,8 +94,4 @@ a_la_française.html
 index.html  
 la_note_enchantee.html  
 le_delice_des_sens.html  
-<<<<<<< HEAD
 palette_du_gout.html
-=======
-palette_du_gout.html  
->>>>>>> 6fd1f7f49964d96f3373dedccc55f32f2281ba0f
