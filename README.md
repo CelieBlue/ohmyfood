@@ -24,67 +24,78 @@ Il est demandé d'employer les technologies suvantes :
 
 ## ARCHITECTURE DES FICHIERS SASS
 
-animations/  
+**animations**  
     _keygrames.scss  
   
-base/  
+**base**  
     _fonts.scss  
-    _reset.scss  
-  
-components/  
+    _reset.scss
+
+**components**  
     _buttons.scss  
-  
-helpers/  
+
+**helpers**  
     _mixins.scss  
     _placeholders.scss  
-    _variables.scss  
-  
-layout/  
-    _footer.scss  
-    _header.scss  
+    _variables.scss
 
-pages/  
+**layout**  
+    _footer.scss  
+    _header.scss
+
+**pages**  
     _index.scss  
     _loader.scss  
-    _restaurant.scss  
-  
-main.scss  
-  
-## ARCHITECTURE GLOBALE DU SITE  
-   
-css  
-    main.css  
-    main.css.map  
-      
-images  
-    a_la_francaise.jpg 
-    le_delice_des_sens.jpg  
-    a_la_francaise.jpg  
-    le_delice_des_sens.jpg  
-  
-scss  
-    animations  
-        _keyframes.scss  
-    base  
+    _restaurant.scss
+
+main.scss
+
+## ARCHITECTURE GLOBALE DU SITE
+
+### css  
+main.css  
+main.css.map
+
+### images  
+a_la_francaise.jpg  
+le_delice_des_sens.jpg  
+à_la_francaise.jpg  
+le_delice_des_sens.jpg
+
+### scss  
+
+**animations**  
+        _keyframes.scss
+        
+**base**  
         _fonts.scss  
-        _reset.scss  
-    components  
+        _reset.scss
+        
+**components**  
         _buttons.scss  
-    helpers  
+        
+**helpers**  
         _mixins.scss  
         _placeholders.scss  
-        _variables.scss  
-    layout  
+        _variables.scss 
+        
+**layout**  
         _footer.scss  
         _header.scss  
-    pages  
+        
+**pages**  
         _index.scss  
         _loader.scss  
-        _restaurant.scss  
+        _restaurant.scss 
+        
 main.scss  
-  
+
 a_la_française.html  
 index.html  
 la_note_enchantee.html  
 le_delice_des_sens.html  
+<<<<<<< HEAD
 palette_du_gout.html
+=======
+palette_du_gout.html  
+>>>>>>> 6fd1f7f49964d96f3373dedccc55f32f2281ba0f
