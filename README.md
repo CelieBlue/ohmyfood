@@ -26,6 +26,8 @@ Il est demandé d'employer les technologies suvantes :
 
 **animations**  
     _keygrames.scss  
+    _loader.scss  
+  
   
 **base**  
     _fonts.scss  
@@ -45,7 +47,6 @@ Il est demandé d'employer les technologies suvantes :
 
 **pages**  
     _index.scss  
-    _loader.scss  
     _restaurant.scss
 
 main.scss
@@ -66,6 +67,7 @@ le_delice_des_sens.jpg
 
 **animations**  
         _keyframes.scss
+        _loader.scss
         
 **base**  
         _fonts.scss  
@@ -85,7 +87,6 @@ le_delice_des_sens.jpg
         
 **pages**  
         _index.scss  
-        _loader.scss  
         _restaurant.scss 
         
 main.scss  
