@@ -23,6 +23,7 @@
         transform: translate(0px, 0px);
     }
 }
+
 //FOR EACH DISH FROM 1 TO 3, animation-delay increase with 0.2s
 @for $i from 1 through 4 {
     .dish:nth-of-type(#{$i}) {
